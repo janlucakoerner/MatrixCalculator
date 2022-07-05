@@ -19,9 +19,10 @@ These arithmetic operations are possible for every matrix dimension,
 except if the arithmetic operation calculates at the datatype bounds of a `java.math.BigDecimal`.
 
 ### How the Matrix Calculator works:
-1. At the start of the java program you will see a frame with many button,
+1. At the start of the java program you will see a frame with many buttons,
    where you can select your desired arithmetic operation.
-2. 
+2. By pressing the load from csv button, you have the opportunity to select a csv file which is seperated by semicolon and which contains a matrix. The selected csv file will automatically be loaded in the inline field next to the button.
+3. Another opportunity is to press the open edit matrix button. Then you can insert a new matrix or edit a csv loaded matrix.
 
 ### Used Technologies:
 * `Java` as programming language for all arithmetic operations.

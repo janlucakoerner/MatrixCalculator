@@ -43,6 +43,8 @@ public class MatrixPanel extends JPanel {
             var openMatrixGui = new OpenMatrixGUI(this, matrix);
         });
 
+        //--------------------------------------------------------------------------------------------------------------
+
         button_openEditMatrixDialog.setText("Open Edit Matrix");
         button_openEditMatrixDialog.addActionListener(e -> {
             matrix = Parser.getMatrixFromInline(textField_inlineMatrix.getText());
@@ -106,6 +108,8 @@ public class MatrixPanel extends JPanel {
             frame.setVisible(true);
         });
 
+        //--------------------------------------------------------------------------------------------------------------
+
         button_loadMatrixCSV.setText("Load Matrix");
         button_loadMatrixCSV.addActionListener(e -> {
             // show file chooser to pick a csv file
@@ -137,6 +141,8 @@ public class MatrixPanel extends JPanel {
             setVisible(true);
         });
 
+        //--------------------------------------------------------------------------------------------------------------
+
         setLayout(new GridBagLayout());
         var gbc = new GridBagConstraints();
         gbc.insets = new Insets(0,5,0,0);
@@ -158,15 +164,19 @@ public class MatrixPanel extends JPanel {
         gbc.gridx = 4;
         add(button_loadMatrixCSV, gbc);
     }
+
     public void setEditable(boolean editable) {
         textField_inlineMatrix.setEditable(editable);
     }
+
     public void setText(String text) {
         label.setText(text);
     }
+
     private void updateInline(BigDecimal[][] matrix) {
         textField_inlineMatrix.setText(Parser.toString(matrix));
     }
+
     private void loadMatrixCSV(File file) throws IOException {
         var reader = new BufferedReader(new FileReader(file));
         var lines = reader.lines().toList();

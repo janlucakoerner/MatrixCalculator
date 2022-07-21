@@ -7,9 +7,9 @@ import java.math.BigDecimal;
  * This class <b>Arithmetic_operations_bigdecimals</b> contains all executable arithmetic operations.
  * They should <b>only</b> be used outside this class, also it cannot create instances of the class because this class possesses these following modifiers: {@code abstract} .<br>
  * All methods of this class possess these following modifiers: {@code static} .
- * @author Jan-Luca K�rner
+ * @author janlucakoerner
  * @version 1.0
- * @since 2021.01.31
+ * @since 1.0 (2022/07/21)
  */
 @SuppressWarnings("BigDecimalMethodWithoutRoundingCalled")
 public abstract class ArithmeticOperations {

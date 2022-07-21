@@ -1,11 +1,18 @@
-package gui;
+package gui.base;
 
 import javax.swing.*;
 import java.awt.*;
 import java.math.BigDecimal;
 
 public class OpenMatrixGUI extends JFrame {
-    public OpenMatrixGUI(MatrixPanel parent, BigDecimal[][] matrix) {
+    /**
+     * This method opens a JFrame for representation a matrix.
+     * The JTextFields contains the value of each cell.
+     * All Components are not editable.
+     * @param parent The parent Frame for hiding and showing.
+     * @param matrix The multidimensional style of a matrix.
+     */
+    public OpenMatrixGUI(JFrame parent, BigDecimal[][] matrix) {
         if (matrix == null) {
             JOptionPane.showMessageDialog(null,"Matrix does not contain data!",
                     "Parse Error", JOptionPane.ERROR_MESSAGE, null);

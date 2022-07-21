@@ -1,4 +1,4 @@
-package gui;
+package gui.base;
 
 import parser.Parser;
 
@@ -18,11 +18,11 @@ import java.math.BigDecimal;
  */
 public class MatrixPanel extends JPanel {
     private final MatrixPanel instance = this;
-    private JLabel label;
-    private JTextField textField_inlineMatrix;
-    private JButton button_openMatrixDialog;
-    private JButton button_openEditMatrixDialog;
-    private JButton button_loadMatrixCSV;
+    private final JLabel label;
+    private final JTextField textField_inlineMatrix;
+    private final JButton button_openMatrixDialog;
+    private final JButton button_openEditMatrixDialog;
+    private final JButton button_loadMatrixCSV;
     private GridBagConstraints gbc;
     private BigDecimal[][] matrix;
     public MatrixPanel(JFrame parent) {
@@ -40,7 +40,7 @@ public class MatrixPanel extends JPanel {
         button_openMatrixDialog.addActionListener(e-> {
             // todo: implement
             matrix = Parser.getMatrixFromInline(textField_inlineMatrix.getText());
-            var openMatrixGui = new OpenMatrixGUI(this, matrix);
+            var openMatrixGui = new OpenMatrixGUI(parent, matrix);
         });
 
         //--------------------------------------------------------------------------------------------------------------
@@ -48,18 +48,96 @@ public class MatrixPanel extends JPanel {
         button_openEditMatrixDialog.setText("Open Edit Matrix");
         button_openEditMatrixDialog.addActionListener(e -> {
             matrix = Parser.getMatrixFromInline(textField_inlineMatrix.getText());
+            boolean createNew = false;
             if (matrix == null) {
-                JOptionPane.showMessageDialog(null, "Matrix does not contain data!",
-                        "Parse Error", JOptionPane.ERROR_MESSAGE, null);
-                return;
+                createNew = true;
             } else if (matrix[0] == null) {
-                JOptionPane.showMessageDialog(null, "Matrix does not contain data!",
-                        "Parse Error", JOptionPane.ERROR_MESSAGE, null);
+                createNew = true;
+            }
+            if (createNew) {
+                var frame = new JFrame();
+                var panel = new JPanel();
+                var button = new JButton();
+                var textField_rowCount = new JTextField();
+                var textField_columnCount = new JTextField();
+
+                parent.setVisible(false);
+
+                panel.setLayout(new GridLayout(2,2));
+                panel.add(new JLabel("Rows"));
+                panel.add(textField_rowCount);
+                panel.add(new JLabel("Columns"));
+                panel.add(textField_columnCount);
+
+                button.setText("Create Matrix");
+                button.addActionListener(e1 -> {
+                    // open matrix create dialog
+                    try {
+                        var rowCount = Integer.parseInt(textField_rowCount.getText());
+                        var columnCount = Integer.parseInt(textField_columnCount.getText());
+                        if (rowCount <= 1 || columnCount <= 1) {
+                            JOptionPane.showMessageDialog(null, "Row or column count is not a valid number",
+                                    "Parse Error", JOptionPane.ERROR_MESSAGE, null);
+                        }
+                        frame.setVisible(false);
+
+                        matrix = new BigDecimal[rowCount][columnCount];
+
+                        var frame_matrix = new JFrame();
+                        var panel_matrix = new JPanel();
+                        var button_close = new JButton();
+                        var textFields_matrix = new JTextField[rowCount * columnCount];
+
+                        for (int i = 0; i < rowCount * columnCount; i++) {
+                            textFields_matrix[i] = new JTextField();
+                            panel_matrix.add(textFields_matrix[i]);
+                        }
+
+                        panel_matrix.setLayout(new GridLayout(rowCount, columnCount));
+                        button_close.setText("Close");
+                        button_close.addActionListener(e2 -> {
+                            frame_matrix.setVisible(false);
+                            parent.setVisible(true);
+                            var y = 0;
+                            for (int row = 0; row < rowCount; row++) {
+                                for (int column = 0; column < columnCount; column++) {
+                                    try {
+                                        matrix[row][column] = new BigDecimal(textFields_matrix[y].getText());
+                                    } catch (NumberFormatException nfe) {
+                                        JOptionPane.showMessageDialog(null, "Matrix could not be parsed!",
+                                                "Parse Error", JOptionPane.ERROR_MESSAGE, null);
+                                        return;
+                                    }
+                                    y++;
+                                }
+                            }
+                            updateInline(matrix);
+                        });
+
+                        frame_matrix.add(panel_matrix, BorderLayout.CENTER);
+                        frame_matrix.add(button_close, BorderLayout.SOUTH);
+                        frame_matrix.pack();
+                        frame_matrix.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                        frame_matrix.setMinimumSize(new Dimension(frame_matrix.getWidth(), frame_matrix.getHeight()));
+                        frame_matrix.setVisible(true);
+                    } catch (NumberFormatException nfe) {
+                        JOptionPane.showMessageDialog(null, "Row or column count is not a valid number",
+                                "Parse Error", JOptionPane.ERROR_MESSAGE, null);
+                    }
+                });
+
+                frame.add(panel, BorderLayout.CENTER);
+                frame.add(button, BorderLayout.SOUTH);
+                frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setMinimumSize(new Dimension(frame.getWidth(), frame.getHeight()));
+                frame.setVisible(true);
                 return;
             }
-            parent.setVisible(false);
+            // open matrix edit dialog
             var rowCount = matrix.length;
             var columnCount = matrix[0].length;
+            parent.setVisible(false);
 
             var frame = new JFrame();
             var panel = new JPanel();
@@ -173,7 +251,11 @@ public class MatrixPanel extends JPanel {
         label.setText(text);
     }
 
-    private void updateInline(BigDecimal[][] matrix) {
+    public String getInline() {
+        return textField_inlineMatrix.getText();
+    }
+
+    public void updateInline(BigDecimal[][] matrix) {
         textField_inlineMatrix.setText(Parser.toString(matrix));
     }
 

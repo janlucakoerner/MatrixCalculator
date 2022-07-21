@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1939703e-de80-4a8b-b4eb-eb2894aaa097" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/OpenMatrixGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/arithmeticoperations/Calculation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixAdditionGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gui/base/TwoMatrixOperationGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/MatrixPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/MatrixPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/MatrixPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/base/MatrixPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/MatrixRepresentation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/OpenMatrixGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/base/OpenMatrixGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +25,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -38,6 +46,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "/Users/janlucakoerner/Library/CloudStorage/OneDrive-Persönlich/00_Programme/11_intellij_idea_workspace/MatrixCalculator/src/main/java"
   }
 }]]></component>
@@ -68,6 +78,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1657040667318</updated>
+      <workItem from="1658428728240" duration="4178000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1657040882883</created>
@@ -78,6 +89,9 @@
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

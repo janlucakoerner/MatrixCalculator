@@ -1,4 +1,5 @@
-import gui.MatrixPanel;
+import gui.arithmeticoperations.MatrixAdditionGUI;
+import gui.base.MatrixPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,11 +13,15 @@ import java.awt.*;
  */
 public class Main {
     public static void main(String[] args) {
+        /*
         var frame = new JFrame();
         frame.add(new MatrixPanel(frame));
         frame.pack();
         frame.setMinimumSize(new Dimension(frame.getWidth(), frame.getHeight()));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setVisible(true);
+
+         */
+        new MatrixAdditionGUI();
     }
 }

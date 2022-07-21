@@ -23,6 +23,7 @@ except if the arithmetic operation calculates at the datatype bounds of a `java.
    where you can select your desired arithmetic operation.
 2. By pressing the load from csv button, you have the opportunity to select a csv file which is seperated by semicolon and which contains a matrix. The selected csv file will automatically be loaded in the inline field next to the button.
 3. Another opportunity is to press the open edit matrix button. Then you can insert a new matrix or edit a csv loaded matrix.
+4. If the inline field next to the open matrix button does not contain data, you will also have the opportunity to insert a custom matrix with the transferred row and column count. Therefor you only have to press the open edit matrix button.
 
 ### Used Technologies:
 * `Java` as programming language for all arithmetic operations.

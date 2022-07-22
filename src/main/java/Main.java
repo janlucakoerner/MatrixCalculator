@@ -1,8 +1,12 @@
 import gui.arithmeticoperations.MatrixAdditionGUI;
+import gui.arithmeticoperations.MatrixInverseMultiplicationGUI;
+import gui.arithmeticoperations.MatrixMultiplicationGUI;
+import gui.arithmeticoperations.MatrixSubtractionGUI;
 import gui.base.MatrixPanel;
 
 import javax.swing.*;
 import java.awt.*;
+import java.math.BigDecimal;
 
 /**
  * Main class of the software project MatrixCalculation.
@@ -22,6 +26,10 @@ public class Main {
         frame.setVisible(true);
 
          */
-        new MatrixAdditionGUI();
+
+        //new MatrixAdditionGUI();
+        //new MatrixSubtractionGUI();
+        //new MatrixMultiplicationGUI();
+        new MatrixInverseMultiplicationGUI();
     }
 }

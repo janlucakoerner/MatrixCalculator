@@ -9,7 +9,7 @@ import java.awt.*;
 /**
  * @author janlucakoerner
  * @version 1.0
- * @since 1.0 (2022/07/04)
+ * @since 1.0 (2022/07/21)
  */
 public class TwoMatrixOperationGUI extends JFrame {
     private final JButton button = new JButton();

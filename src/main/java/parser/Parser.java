@@ -21,6 +21,9 @@ public class Parser {
      * @return The given matrix as String.
      */
     public static String toString(BigDecimal[][] matrix) {
+        if (matrix == null) {
+            return "";
+        }
         var lines = new String[matrix.length];
         for (int i = 0; i < matrix.length; i++) {
             lines[i] = toString(matrix[i]);

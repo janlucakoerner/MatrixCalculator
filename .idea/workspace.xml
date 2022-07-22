@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1939703e-de80-4a8b-b4eb-eb2894aaa097" name="Changes" comment="2022/07/22" />
+    <list default="true" id="1939703e-de80-4a8b-b4eb-eb2894aaa097" name="Changes" comment="2022/07/22">
+      <change afterPath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixInverseMultiplicationGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixMultiplicationGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixSubtractionGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/arithmeticoperations/ArithmeticOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arithmeticoperations/ArithmeticOperations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixAdditionGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixAdditionGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/base/TwoMatrixOperationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/base/TwoMatrixOperationGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/parser/Parser.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,7 +61,7 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="JAR Application.MatrixCalculator-1.0-SNAPSHOT.jar">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="MatrixCalculator" />
@@ -64,8 +75,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JAR Application.MatrixCalculator-1.0-SNAPSHOT.jar" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JAR Application.MatrixCalculator-1.0-SNAPSHOT.jar" />
       </list>
     </recent_temporary>
   </component>
@@ -77,7 +88,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1657040667318</updated>
-      <workItem from="1658428728240" duration="6400000" />
+      <workItem from="1658428728240" duration="11236000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1657040882883</created>
@@ -107,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658470358577</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="2022/07/22">
+      <created>1658470375234</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1658470375234</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,5 +147,15 @@
     <MESSAGE value="2022/07/21" />
     <MESSAGE value="2022/07/22" />
     <option name="LAST_COMMIT_MESSAGE" value="2022/07/22" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,5 +1,6 @@
 package arithmeticoperations;
 
+import javax.swing.*;
 import java.math.BigDecimal;
 
 /**
@@ -22,24 +23,26 @@ public abstract class ArithmeticOperations {
 	 * @return <b>result</b>	of data type {@code BigDecimal[][]} delivers a matrix.
 	 */
 	public static BigDecimal[][] matrixMultiplication(BigDecimal[][] matricesA, BigDecimal[][] matricesB) {
-		BigDecimal[][] result = null;
-		if (matricesA != null && matricesB != null) {
-			if (matricesA.length == matricesB[0].length) {
-				result = new BigDecimal[matricesA.length][matricesB[0].length];
-				for (int x = 0; x < result.length; x++) {
-					for (int y = 0; y < result[0].length; y++) {
-						result[x][y] = new BigDecimal(0);
-					}
+		if (matricesA == null || matricesB == null) {
+			JOptionPane.showMessageDialog(null, "Matrices equals null!",
+					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
+			return null;
+		} else if (matricesA.length != matricesB[0].length) {
+			JOptionPane.showMessageDialog(null, "Matrices have false dimensions!",
+					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
+			return null;
+		}
+		BigDecimal[][] result = new BigDecimal[matricesA.length][matricesB[0].length];
+		for (int x = 0; x < result.length; x++) {
+			for (int y = 0; y < result[0].length; y++) {
+				result[x][y] = new BigDecimal(0);
+			}
+		}
+		for (int x = 0; x < result.length; x++) {
+			for (int y = 0; y < result.length; y++) {
+				for (int j = 0; j < matricesB.length; j++) {
+					result[x][y] = result[x][y].add(matricesA[x][j].multiply(matricesB[j][y]));
 				}
-				for (int x = 0; x < result.length; x++) {
-					for (int y = 0; y < result.length; y++) {
-						for (int j = 0; j < matricesB.length; j++) {
-							result[x][y] = result[x][y].add(matricesA[x][j].multiply(matricesB[j][y]));
-						}
-					}
-				}
-			} else {
-				// todo keine gueltige berechnung
 			}
 		}
 		return result;
@@ -94,42 +97,40 @@ public abstract class ArithmeticOperations {
 	 * @return <b>inverse</b> of data type {@code BigDecimal[][]} delivers a matrix.
 	 */
 	public static BigDecimal[][] matrixInversion(BigDecimal[][] pMatrix) {
-		BigDecimal[][] inverse = null;
-		if (pMatrix.length == pMatrix[0].length) {
-			if (!determinant(pMatrix).equals(BigDecimal.ZERO)) {
-				try {
-					inverse = new BigDecimal[pMatrix.length][pMatrix.length];
-					if (pMatrix.length == 2) {
-						inverse[0][0] = (new BigDecimal(1).divide(determinant(pMatrix))).multiply(pMatrix[1][1]);
-						inverse[0][1] = (new BigDecimal(1).divide(determinant(pMatrix))).multiply(new BigDecimal(-1).multiply(pMatrix[0][1]));
-						inverse[1][0] = (new BigDecimal(1).divide(determinant(pMatrix))).multiply(new BigDecimal(-1).multiply(pMatrix[1][0]));
-						inverse[1][1] = (new BigDecimal(1).divide(determinant(pMatrix))).multiply(pMatrix[0][0]);
-					} else {
-						// minors and cofactors
-				        for (int i = 0; i < pMatrix.length; i++)
-				            for (int j = 0; j < pMatrix[i].length; j++)
-				                inverse[i][j] = new BigDecimal(-1).pow(i+j).multiply(determinant(minor(pMatrix, i, j)));
-
-				        // adjugate and determinant
-				        BigDecimal det = new BigDecimal(1).divide(determinant(pMatrix));
-				        for (int i = 0; i < inverse.length; i++) {
-				            for (int j = 0; j <= i; j++) {
-				                BigDecimal temp = inverse[i][j];
-				                inverse[i][j] = inverse[j][i].multiply(det);
-				                inverse[j][i] = temp.multiply(det);
-				            }
-				        }
-					}
-				} catch (NullPointerException e) {
-					// TODO: handle exception
-				}
-			}else {
-				// Statics.ERROR_MESSAGE = "Err: Keine g�ltige Berechnung! (Eingabe darf keine Singul�re Matrix sein)";
-				// todo: keine gueltige berechnung matrix ist singulär
-			}
+		if (pMatrix == null) {
+			JOptionPane.showMessageDialog(null, "Matrices equals null!",
+					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
+			return null;
+		} else if (pMatrix.length != pMatrix[0].length) {
+			JOptionPane.showMessageDialog(null, "Matrix must be a square matrix!",
+					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
+			return null;
+		} else if (BigDecimal.ZERO.equals(determinant(pMatrix))) {
+			JOptionPane.showMessageDialog(null, "Matrix must be a non singular matrix!",
+					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
+			return null;
+		}
+		BigDecimal[][] inverse = new BigDecimal[pMatrix.length][pMatrix.length];
+		if (pMatrix.length == 2) {
+			inverse[0][0] = (new BigDecimal(1).divide(determinant(pMatrix))).multiply(pMatrix[1][1]);
+			inverse[0][1] = (new BigDecimal(1).divide(determinant(pMatrix))).multiply(new BigDecimal(-1).multiply(pMatrix[0][1]));
+			inverse[1][0] = (new BigDecimal(1).divide(determinant(pMatrix))).multiply(new BigDecimal(-1).multiply(pMatrix[1][0]));
+			inverse[1][1] = (new BigDecimal(1).divide(determinant(pMatrix))).multiply(pMatrix[0][0]);
 		} else {
-			// Statics.ERROR_MESSAGE = "Err: Keine g�ltige Berechnung! (Eingabe muss eine Quadratmatrix sein)";
-			// todo: keine gueltige berechnung eingabe muss quadratmatrix sein
+			// minors and cofactors
+			for (int i = 0; i < pMatrix.length; i++)
+				for (int j = 0; j < pMatrix[i].length; j++)
+					inverse[i][j] = new BigDecimal(-1).pow(i+j).multiply(determinant(minor(pMatrix, i, j)));
+
+			// adjugate and determinant
+			BigDecimal det = BigDecimal.ONE.divide(determinant(pMatrix));
+			for (int i = 0; i < inverse.length; i++) {
+				for (int j = 0; j <= i; j++) {
+					BigDecimal temp = inverse[i][j];
+					inverse[i][j] = inverse[j][i].multiply(det);
+					inverse[j][i] = temp.multiply(det);
+				}
+			}
 		}
         return inverse;
     }
@@ -143,8 +144,15 @@ public abstract class ArithmeticOperations {
 	 * @return <b>det</b> of data type {@code BigDecimal} delivers a determinant.
 	 */
 	private static BigDecimal determinant(BigDecimal[][] pMatrix) {
-        if (pMatrix.length != pMatrix[0].length)
-        	System.out.println("Error");
+		if (pMatrix == null) {
+			JOptionPane.showMessageDialog(null, "Matrices equals null!",
+					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
+			return null;
+		} else if (pMatrix.length != pMatrix[0].length) {
+			JOptionPane.showMessageDialog(null, "Matrix must be a square matrix!",
+					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
+			return null;
+		}
         if (pMatrix.length == 2)
             return pMatrix[0][0].multiply(pMatrix[1][1]).subtract(pMatrix[0][1]).multiply(pMatrix[1][0]);
 
@@ -180,15 +188,16 @@ public abstract class ArithmeticOperations {
 	 * @return <b>result</b> of data type {@code BigDecimal[][]} delivers a square matrix.
 	 */
 	public static BigDecimal[][] matrixInverseMultiplication(BigDecimal[][] matricesA, BigDecimal[][] matricesB) {
-		BigDecimal[][] result = null;
-		try {
-			result = matrixMultiplication(matricesA, matrixInversion(matricesB));
-		} catch (NullPointerException e) {
-			// TODO: handle exception
-			//Statics.ERROR_MESSAGE = "Err: Bitte geben Sie eine Matrix an!";
-			// todo bitte geben sie eine matrix ein
+		if (matricesA == null || matricesB == null) {
+			JOptionPane.showMessageDialog(null, "Matrices equals null!",
+					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
+			return null;
+		} else if (matrixInversion(matricesB) == null) {
+			JOptionPane.showMessageDialog(null, "Matrix could not be inverted!",
+					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
+			return null;
 		}
-		return result;
+		return matrixMultiplication(matricesA, matrixInversion(matricesB));
 	}
 	/**
 	 * This method <b>matrixSubtraction</b> subtracts {@code matricesA} with {@code matricesB}.<br>
@@ -198,16 +207,20 @@ public abstract class ArithmeticOperations {
 	 * @return <b>result</b> of data type {@code BigDecimal[][]} delivers a matrix.
 	 */
 	public static BigDecimal[][] matrixSubtraction(BigDecimal[][] matricesA, BigDecimal[][] matricesB) {
+		if (matricesA == null || matricesB == null) {
+			JOptionPane.showMessageDialog(null, "Matrices equals null!",
+					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
+			return null;
+		} else if (!(matricesA.length == matricesB.length && matricesA[0].length == matricesB[0].length)) {
+			JOptionPane.showMessageDialog(null, "Matrices must have the same dimension!",
+					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
+			return null;
+		}
 		BigDecimal[][] result = new BigDecimal[matricesA.length][matricesB.length];
-		if (matricesA.length == matricesB.length && matricesA[0].length == matricesB[0].length) {
-			for (int i = 0; i < matricesA[0].length; i++) {
-				for (int j = 0; j < matricesA.length; j++) {
-					result[j][i] = matricesA[j][i].subtract(matricesB[j][i]);
-				}
+		for (int i = 0; i < matricesA[0].length; i++) {
+			for (int j = 0; j < matricesA.length; j++) {
+				result[j][i] = matricesA[j][i].subtract(matricesB[j][i]);
 			}
-		} else {
-			// Statics.ERROR_MESSAGE = "Err: Keine g�ltige Berechnung! (Matrizen m�ssen die gleiche Gr��e haben)";
-			// todo keine gueltige berechnung matrix müssen die gleiche größe haben
 		}
 		return result;
 	}
@@ -219,16 +232,20 @@ public abstract class ArithmeticOperations {
 	 * @return <b>result</b> of data type {@code BigDecimal[][]} delivers a matrix.
 	 */
 	public static BigDecimal[][] matrixAddition(BigDecimal[][] matricesA, BigDecimal[][] matricesB) {
+		if (matricesA == null || matricesB == null) {
+			JOptionPane.showMessageDialog(null, "Matrices equals null!",
+					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
+			return null;
+		} else if (!(matricesA.length == matricesB.length && matricesA[0].length == matricesB[0].length)) {
+			JOptionPane.showMessageDialog(null, "Matrices must have the same dimension!",
+					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
+			return null;
+		}
 		BigDecimal[][] result = new BigDecimal[matricesA.length][matricesA[0].length];
-		if (matricesA.length == matricesB.length && matricesA[0].length == matricesB[0].length) {
-			for (int i = 0; i < matricesA[0].length; i++) {
-				for (int j = 0; j < matricesA.length; j++) {
-					result[j][i] = matricesA[j][i].add(matricesB[j][i]);
-				}
+		for (int i = 0; i < matricesA[0].length; i++) {
+			for (int j = 0; j < matricesA.length; j++) {
+				result[j][i] = matricesA[j][i].add(matricesB[j][i]);
 			}
-		} else {
-			// Statics.ERROR_MESSAGE = "Err: Keine g�ltige Berechnung! (Matrizen m�ssen die gleiche Gr��e haben)";
-			// todo keine gueltige berechnung matrix müssen die gleiche größe haben
 		}
 		return result;
 	}

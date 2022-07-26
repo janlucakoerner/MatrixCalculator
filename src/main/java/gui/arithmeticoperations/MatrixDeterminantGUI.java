@@ -18,6 +18,6 @@ public class MatrixDeterminantGUI implements Calculation {
     }
     @Override
     public BigDecimal matrixToNumberCalculation(BigDecimal[][] matrix) {
-        return ArithmeticOperations.determinant(matrix);
+        return ArithmeticOperations.determinant(matrix, matrix.length, matrix.length);
     }
 }

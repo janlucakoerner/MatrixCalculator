@@ -17,8 +17,10 @@ public class MatrixInverseMultiplicationGUI implements Calculation {
         gui.setJFrameTitle("Matrix Inverse Multiplication");
         gui.setJButtonText("Inverse multiply");
     }
+
     @Override
     public BigDecimal[][] matrixCalculation(BigDecimal[][] matrix1, BigDecimal[][] matrix2) {
         return ArithmeticOperations.matrixInverseMultiplication(matrix1, matrix2);
     }
+
 }

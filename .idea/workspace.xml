@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1939703e-de80-4a8b-b4eb-eb2894aaa097" name="Changes" comment="2022/07/22">
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixDeterminantGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/base/MatrixToNumberOperationGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixInversionGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gui/base/OneMatrixOperationGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/arithmeticoperations/ArithmeticOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arithmeticoperations/ArithmeticOperations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/arithmeticoperations/Calculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arithmeticoperations/Calculation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixDeterminantGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixDeterminantGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixInverseMultiplicationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixInverseMultiplicationGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +28,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -37,16 +39,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/janlucakoerner/Library/CloudStorage/OneDrive-Persönlich/00_Programme/11_intellij_idea_workspace/MatrixCalculator/src/main/java",
-    "nodejs_package_manager_path": "npm"
-  }
-}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java" />
@@ -144,6 +136,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit" />

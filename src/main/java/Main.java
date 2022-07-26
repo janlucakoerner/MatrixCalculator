@@ -4,6 +4,7 @@ import gui.base.MatrixPanel;
 import javax.swing.*;
 import java.awt.*;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 /**
  * Main class of the software project MatrixCalculation.
@@ -28,6 +29,7 @@ public class Main {
         //new MatrixSubtractionGUI();
         //new MatrixMultiplicationGUI();
         //new MatrixInverseMultiplicationGUI();
-        new MatrixDeterminantGUI();
+        //new MatrixDeterminantGUI();
+        new MatrixInversionGUI();
     }
 }

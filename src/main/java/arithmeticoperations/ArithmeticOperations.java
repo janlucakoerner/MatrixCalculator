@@ -143,7 +143,7 @@ public abstract class ArithmeticOperations {
 	 * @param pMatrix of data type {@code BigDecimal[][]} should contain a square matrix.
 	 * @return <b>det</b> of data type {@code BigDecimal} delivers a determinant.
 	 */
-	private static BigDecimal determinant(BigDecimal[][] pMatrix) {
+	public static BigDecimal determinant(BigDecimal[][] pMatrix) {
 		if (pMatrix == null) {
 			JOptionPane.showMessageDialog(null, "Matrices equals null!",
 					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
@@ -153,30 +153,33 @@ public abstract class ArithmeticOperations {
 					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
 			return null;
 		}
-        if (pMatrix.length == 2)
-            return pMatrix[0][0].multiply(pMatrix[1][1]).subtract(pMatrix[0][1]).multiply(pMatrix[1][0]);
-
-        BigDecimal det = new BigDecimal(0);
-        for (int i = 0; i < pMatrix[0].length; i++)
-            det = det.add(new BigDecimal(Math.pow(-1, i)).multiply(pMatrix[0][i]).multiply(determinant(minor(pMatrix, 0, i)))) ;
-        return det;
+        int result = 0;
+		if (pMatrix.length == 1)
+			return pMatrix[0][0];
     }
 	/**
-	 * This method <b>minor</b> calculates the minor of {@code pMatrix}.<br>
+	 * This method <b>cofactor</b> calculates the cofactor of {@code pMatrix}.<br>
 	 * 
 	 * @param pMatrix of data type {@code BigDecimal[][]} should contain a square matrix.
-	 * @param pRow of data type {@code int} should contain a row
-	 * @param pColumn of data type {@code int} should contain a column
-	 * @return <b>minor</b> of data type {@code BigDecimal[][]} delivers a minor square matrix .
+	 *
+	 * @return <b>cofactor</b> of data type {@code BigDecimal[][]} delivers a cofactor square matrix .
 	 */
-	private static BigDecimal[][] minor(BigDecimal[][] pMatrix, int pRow, int pColumn) {
-        BigDecimal[][] minor = new BigDecimal[pMatrix.length - 1][pMatrix.length - 1];
-
-        for (int i = 0; i < pMatrix.length; i++)
-            for (int j = 0; i != pRow && j < pMatrix[i].length; j++)
-                if (j != pColumn)
-                    minor[i < pRow ? i : i - 1][j < pColumn ? j : j - 1] = pMatrix[i][j];
-        return minor;
+	private static BigDecimal[][] cofactor(BigDecimal[][] pMatrix, int x, int y) {
+		int i = 0, j = 0;
+        int dimension = pMatrix.length;
+		BigDecimal[][] result = new BigDecimal[dimension][dimension];
+		for (int row = 0; row < dimension; row++) {
+			for (int column = 0; column < dimension; column++) {
+				if (row != x && column != y) {
+					result[i][j++] = pMatrix[row][column];
+					if (j == dimension - 1) {
+						j = 0;
+						i++;
+					}
+				}
+			}
+		}
+		return result;
     }
 	/**
 	 * This method <b>matrixInverseMultiplication</b> multiplies {@code matricesA} with the inverse of {@code matricesB}.<br>

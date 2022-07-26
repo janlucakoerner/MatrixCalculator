@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1939703e-de80-4a8b-b4eb-eb2894aaa097" name="Changes" comment="2022/07/22">
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixInverseMultiplicationGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixMultiplicationGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixSubtractionGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixDeterminantGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gui/base/MatrixToNumberOperationGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/arithmeticoperations/ArithmeticOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arithmeticoperations/ArithmeticOperations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixAdditionGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixAdditionGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/base/TwoMatrixOperationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/base/TwoMatrixOperationGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/parser/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/arithmeticoperations/Calculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arithmeticoperations/Calculation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +84,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1657040667318</updated>
-      <workItem from="1658428728240" duration="11236000" />
+      <workItem from="1658428728240" duration="15019000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1657040882883</created>
@@ -125,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658470375234</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="2022/07/22">
+      <created>1658524292974</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1658524292974</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

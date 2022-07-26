@@ -1,7 +1,4 @@
-import gui.arithmeticoperations.MatrixAdditionGUI;
-import gui.arithmeticoperations.MatrixInverseMultiplicationGUI;
-import gui.arithmeticoperations.MatrixMultiplicationGUI;
-import gui.arithmeticoperations.MatrixSubtractionGUI;
+import gui.arithmeticoperations.*;
 import gui.base.MatrixPanel;
 
 import javax.swing.*;
@@ -30,6 +27,7 @@ public class Main {
         //new MatrixAdditionGUI();
         //new MatrixSubtractionGUI();
         //new MatrixMultiplicationGUI();
-        new MatrixInverseMultiplicationGUI();
+        //new MatrixInverseMultiplicationGUI();
+        new MatrixDeterminantGUI();
     }
 }

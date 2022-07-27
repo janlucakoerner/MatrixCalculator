@@ -5,16 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1939703e-de80-4a8b-b4eb-eb2894aaa097" name="Changes" comment="2022/07/27">
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixPotencyGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/base/MatrixAndNumberOperationGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/base/NumberPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/middleware/base/Fraction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/middleware/base/INumberDatatype.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/arithmeticoperations/ArithmeticOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arithmeticoperations/ArithmeticOperations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/arithmeticoperations/Calculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arithmeticoperations/Calculation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixDeterminantGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixDeterminantGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/base/MatrixPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/base/MatrixPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/base/MatrixToNumberOperationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/base/MatrixToNumberOperationGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/arithmeticoperations/ArithmeticOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/middleware/ArithmeticOperations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/arithmeticoperations/Calculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/middleware/base/ICalculation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixAdditionGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/gui/MatrixAdditionGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixDeterminantGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/gui/MatrixDeterminantGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixInverseMultiplicationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/gui/MatrixInverseMultiplicationGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixInversionGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/gui/MatrixInversionGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixMultiplicationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/gui/MatrixMultiplicationGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixPotencyGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/gui/MatrixPotencyGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixSubtractionGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/gui/MatrixSubtractionGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/base/MatrixAndNumberOperationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/base/frame/MatrixAndNumberOperationGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/base/MatrixPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/base/panel/MatrixPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/base/MatrixToNumberOperationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/base/frame/MatrixToNumberOperationGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/base/NumberPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/base/panel/NumberPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/base/OneMatrixOperationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/base/frame/OneMatrixOperationGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/base/OpenMatrixGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/base/frame/OpenMatrixGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/base/TwoMatrixOperationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/base/frame/TwoMatrixOperationGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/Parser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +43,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -139,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658902675870</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="2022/07/27">
+      <created>1658904811405</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1658904811405</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

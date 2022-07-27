@@ -1,4 +1,4 @@
-package arithmeticoperations;
+package middleware.base;
 
 import java.math.BigDecimal;
 
@@ -7,7 +7,7 @@ import java.math.BigDecimal;
  * @version 1.0
  * @since 1.0 (2022/07/04)
  */
-public interface Calculation {
+public interface ICalculation {
     default BigDecimal[][] matrixCalculation(BigDecimal[][] matrix1, BigDecimal[][] matrix2) {
         return null;
     }

@@ -1,10 +1,4 @@
-import gui.arithmeticoperations.*;
-import gui.base.MatrixPanel;
-
-import javax.swing.*;
-import java.awt.*;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
+import frontend.gui.MatrixPotencyGUI;
 
 /**
  * Main class of the software project MatrixCalculation.

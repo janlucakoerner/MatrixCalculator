@@ -1,8 +1,8 @@
-package gui.arithmeticoperations;
+package frontend.gui;
 
-import arithmeticoperations.ArithmeticOperations;
-import arithmeticoperations.Calculation;
-import gui.base.TwoMatrixOperationGUI;
+import middleware.ArithmeticOperations;
+import middleware.base.ICalculation;
+import frontend.base.frame.TwoMatrixOperationGUI;
 
 import java.math.BigDecimal;
 
@@ -11,7 +11,7 @@ import java.math.BigDecimal;
  * @version 1.0
  * @since 1.0 (2022/07/22)
  */
-public class MatrixMultiplicationGUI implements Calculation {
+public class MatrixMultiplicationGUI implements ICalculation {
     public MatrixMultiplicationGUI() {
         var gui = new TwoMatrixOperationGUI(this);
         gui.setJFrameTitle("Matrix Multiplication");

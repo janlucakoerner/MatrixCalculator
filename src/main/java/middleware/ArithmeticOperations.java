@@ -1,4 +1,4 @@
-package arithmeticoperations;
+package middleware;
 
 import javax.swing.*;
 import java.math.BigDecimal;

@@ -1,6 +1,7 @@
-package gui.base;
+package frontend.base.panel;
 
-import parser.Parser;
+import frontend.base.frame.OpenMatrixGUI;
+import backend.Parser;
 
 import javax.swing.*;
 import java.awt.*;

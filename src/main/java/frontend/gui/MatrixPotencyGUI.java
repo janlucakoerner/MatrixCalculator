@@ -1,12 +1,12 @@
-package gui.arithmeticoperations;
+package frontend.gui;
 
-import arithmeticoperations.ArithmeticOperations;
-import arithmeticoperations.Calculation;
-import gui.base.MatrixAndNumberOperationGUI;
+import middleware.ArithmeticOperations;
+import middleware.base.ICalculation;
+import frontend.base.frame.MatrixAndNumberOperationGUI;
 
 import java.math.BigDecimal;
 
-public class MatrixPotencyGUI implements Calculation {
+public class MatrixPotencyGUI implements ICalculation {
     public MatrixPotencyGUI() {
         var gui = new MatrixAndNumberOperationGUI(this);
         gui.setJFrameTitle("Matrix Potency");

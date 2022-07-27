@@ -1,4 +1,4 @@
-package gui.base;
+package frontend.base.frame;
 
 import javax.swing.*;
 import java.awt.*;

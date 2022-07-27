@@ -1,28 +1,34 @@
-package gui.base;
+package frontend.base.frame;
 
-import arithmeticoperations.Calculation;
-import parser.Parser;
+import middleware.base.ICalculation;
+import frontend.base.panel.MatrixPanel;
+import frontend.base.panel.NumberPanel;
+import backend.Parser;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class OneMatrixOperationGUI extends JFrame {
+public class MatrixAndNumberOperationGUI extends JFrame {
     private final JButton button = new JButton();
 
-    public OneMatrixOperationGUI(Calculation calculation) {
+    public MatrixAndNumberOperationGUI(ICalculation calculation) {
         var matrixPanel = new MatrixPanel(this);
+        var numberPanel = new NumberPanel(this);
         var matrixPanelResult = new MatrixPanel(this);
         var panel = new JPanel();
         panel.setLayout(new GridLayout(3, 1));
         matrixPanel.setText("Matrix");
+        numberPanel.setText("Number");
         matrixPanelResult.setText("Result");
         panel.add(matrixPanel);
+        panel.add(numberPanel);
         panel.add(matrixPanelResult);
         add(panel, BorderLayout.CENTER);
         button.setText("Calculate");
         button.addActionListener(e -> {
-            var matrix1 = Parser.getMatrixFromInline(matrixPanel.getInline());
-            var matrixResult = calculation.matrixCalculation(matrix1);
+            var matrix = Parser.getMatrixFromInline(matrixPanel.getInline());
+            var number = numberPanel.getValue();
+            var matrixResult = calculation.matrixCalculation(matrix, number);
             matrixPanelResult.updateInline(matrixResult);
         });
         add(button, BorderLayout.SOUTH);

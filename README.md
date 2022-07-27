@@ -26,6 +26,6 @@ except if the arithmetic operation calculates at the datatype bounds of a `java.
 4. If the inline field next to the open matrix button does not contain data, you will also have the opportunity to insert a custom matrix with the transferred row and column count. Therefor you only have to press the open edit matrix button.
 
 ### Used Technologies:
-* `Java` as programming language for all arithmetic operations.
+* `java` as programming language for all arithmetic operations.
 * `java.swing` as graphical user interface extension for Java.
 * `java.math.BigDecimal` as datatype for each represented value.

@@ -5,24 +5,24 @@ package middleware.base;
  * @version 1.0
  * @since 1.0 (2022/07/04)
  */
-public interface ICalculation<T> {
-    default T[][] matrixCalculation(T[][] matrix1, T[][] matrix2) {
+public interface ICalculation {
+    default Object[][] matrixCalculation(Object[][] matrix1, Object[][] matrix2) {
         return null;
     }
-    default T[][] matrixCalculation(T[][] matrix) {
+    default Object[][] matrixCalculation(Object[][] matrix) {
         return null;
     }
-    default T[][] matrixCalculation(T[][] matrix, T[] vector) {
+    default Object[][] matrixCalculation(Object[][] matrix, Object[] vector) {
         return null;
     }
-    default T[] vectorCalculation(T[][] matrix) {
+    default Object[] vectorCalculation(Object[][] matrix) {
         return null;
     }
-    default T[] vectorCalculation(T[] vector1, T[] vector2) {
+    default Object[] vectorCalculation(Object[] vector1, Object[] vector2) {
         return null;
     }
-    default T numberCalculation(T[][] matrix) { return null; }
-    default T[][] matrixCalculation(T[][] matrix, T number) {
+    default Object numberCalculation(Object[][] matrix) { return null; }
+    default Object[][] matrixCalculation(Object[][] matrix, Object number) {
         return null;
     }
 }

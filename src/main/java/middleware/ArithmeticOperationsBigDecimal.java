@@ -13,7 +13,7 @@ import java.math.RoundingMode;
  * @since 1.0 (2022/07/26)
  */
 @SuppressWarnings("BigDecimalMethodWithoutRoundingCalled")
-public abstract class ArithmeticOperations {
+public abstract class ArithmeticOperationsBigDecimal {
 	/**
 	 * This method <b>matrixMultiplication</b> multiplies two matrices:<br>
 	 * &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {@code matricesA} x {@code matricesB} = {@code result}

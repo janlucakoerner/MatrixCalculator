@@ -1,6 +1,9 @@
 package frontend.gui;
 
-import middleware.ArithmeticOperations;
+import middleware.ArithmeticOperationsBigDecimal;
+import middleware.base.ArithmeticOperationsFraction;
+import middleware.base.DataType;
+import middleware.base.Fraction;
 import middleware.base.ICalculation;
 import frontend.base.frame.MatrixToNumberOperationGUI;
 
@@ -18,7 +21,12 @@ public class MatrixDeterminantGUI implements ICalculation {
         gui.setJButtonText("Calculate Determinant");
     }
     @Override
-    public BigDecimal numberCalculation(BigDecimal[][] matrix) {
-        return ArithmeticOperations.determinant(matrix, matrix.length, matrix.length);
+    public Object numberCalculation(Object[][] matrix) {
+        if (matrix instanceof BigDecimal[][] && DataType.current == DataType.BIG_DECIMAL)
+            return ArithmeticOperationsBigDecimal.determinant((BigDecimal[][]) matrix, matrix.length, matrix.length);
+        else if (matrix instanceof Fraction[][] && DataType.current == DataType.FRACTION)
+            return ArithmeticOperationsFraction.determinant((Fraction[][]) matrix, matrix.length, matrix.length);
+        else
+            return null;
     }
 }

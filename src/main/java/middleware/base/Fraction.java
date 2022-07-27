@@ -35,7 +35,14 @@ public class Fraction implements INumberDatatype<Fraction>, Comparable<Fraction>
         denominator = BigDecimal.ONE;
     }
     public Fraction(String value) {
-
+        if (value.contains("/")) {
+            var fraction = value.split("/");
+            numerator = new BigDecimal(fraction[0]);
+            denominator = new BigDecimal(fraction[1]);
+        } else {
+            numerator = new BigDecimal(value);
+            denominator = BigDecimal.ONE;
+        }
     }
     //------------------------------------------------------------------------------------------------------------------
     //  methods: other operations

@@ -1,9 +1,11 @@
 package frontend.base.frame;
 
+import backend.ParserFraction;
 import middleware.base.DataType;
+import middleware.base.Fraction;
 import middleware.base.ICalculation;
 import frontend.base.panel.MatrixPanel;
-import backend.Parser;
+import backend.ParserBigDecimal;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,13 +27,13 @@ public class OneMatrixOperationGUI extends JFrame {
         button.setText("Calculate");
         button.addActionListener(e -> {
             if (DataType.current == DataType.BIG_DECIMAL) {
-                var matrix1 = Parser.instance_bigDecimal.getMatrixFromInline(matrixPanel.getInline());
-                var matrixResult = calculation.matrixCalculation(matrix1);
-                matrixPanelResult.updateInline((BigDecimal[][]) matrixResult);
+                var matrix1 = ParserBigDecimal.getMatrixFromInline(matrixPanel.getInline());
+                var matrixResult = (BigDecimal[][]) calculation.matrixCalculation(matrix1);
+                matrixPanelResult.updateInline( matrixResult);
             } else if (DataType.current == DataType.FRACTION) {
-                var matrix1 = Parser.instance_fraction.getMatrixFromInline(matrixPanel.getInline());
-                var matrixResult = calculation.matrixCalculation(matrix1);
-                matrixPanelResult.updateInline((BigDecimal[][]) matrixResult);
+                var matrix1 = ParserFraction.getMatrixFromInline(matrixPanel.getInline());
+                var matrixResult = (Fraction [][]) calculation.matrixCalculation(matrix1);
+                matrixPanelResult.updateInline( matrixResult);
             }
         });
         add(button, BorderLayout.SOUTH);

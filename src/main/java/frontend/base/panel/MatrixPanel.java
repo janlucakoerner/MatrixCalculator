@@ -1,7 +1,8 @@
 package frontend.base.panel;
 
+import backend.ParserFraction;
 import frontend.base.frame.OpenMatrixGUI;
-import backend.Parser;
+import backend.ParserBigDecimal;
 import middleware.base.DataType;
 import middleware.base.Fraction;
 
@@ -22,18 +23,13 @@ import java.math.BigDecimal;
 public class MatrixPanel extends JPanel {
     private final JLabel label;
     private final JTextField textField_inlineMatrix;
-    private final JButton button_openMatrixDialog;
-    private final JButton button_openEditMatrixDialog;
-    private final JButton button_loadMatrixCSV;
-    private GridBagConstraints gbc;
     private Object[][] matrix;
-    private OpenMatrixGUI openMatrixGUI;
     public MatrixPanel(JFrame parent) {
         label = new JLabel();
         textField_inlineMatrix = new JTextField();
-        button_openMatrixDialog = new JButton();
-        button_openEditMatrixDialog = new JButton();
-        button_loadMatrixCSV = new JButton();
+        var button_openMatrixDialog = new JButton();
+        var button_openEditMatrixDialog = new JButton();
+        var button_loadMatrixCSV = new JButton();
 
         label.setText("Matrix:");
 
@@ -42,11 +38,11 @@ public class MatrixPanel extends JPanel {
         button_openMatrixDialog.setText("Open Matrix");
         button_openMatrixDialog.addActionListener(e-> {
             if (DataType.current == DataType.BIG_DECIMAL) {
-                matrix = Parser.getMatrixFromInline(textField_inlineMatrix.getText());
-                openMatrixGUI = new OpenMatrixGUI<>(parent, (BigDecimal[][]) matrix);
+                matrix = ParserBigDecimal.getMatrixFromInline(textField_inlineMatrix.getText());
+                new OpenMatrixGUI(parent, matrix);
             } else if (DataType.current == DataType.FRACTION) {
-                matrix = Parser.getMatrixFromInline(textField_inlineMatrix.getText());
-                openMatrixGUI = new OpenMatrixGUI<>(parent, (Fraction[][]) matrix);
+                matrix = ParserFraction.getMatrixFromInline(textField_inlineMatrix.getText());
+                new OpenMatrixGUI(parent, matrix);
             }
         });
 
@@ -55,9 +51,9 @@ public class MatrixPanel extends JPanel {
         button_openEditMatrixDialog.setText("Open Edit Matrix");
         button_openEditMatrixDialog.addActionListener(e -> {
             if (DataType.current == DataType.BIG_DECIMAL)
-                matrix = Parser.instance_bigDecimal.getMatrixFromInline(textField_inlineMatrix.getText());
+                matrix = ParserBigDecimal.getMatrixFromInline(textField_inlineMatrix.getText());
             else if (DataType.current == DataType.FRACTION)
-                matrix = Parser.instance_fraction.getMatrixFromInline(textField_inlineMatrix.getText());
+                matrix = ParserFraction.getMatrixFromInline(textField_inlineMatrix.getText());
             boolean createNew = false;
             if (matrix == null) {
                 createNew = true;
@@ -292,10 +288,10 @@ public class MatrixPanel extends JPanel {
     }
 
     public void updateInline(BigDecimal[][] matrix) {
-        textField_inlineMatrix.setText(Parser.instance_bigDecimal.toString(matrix));
+        textField_inlineMatrix.setText(ParserBigDecimal.toString(matrix));
     }
     public void updateInline(Fraction[][] matrix) {
-        textField_inlineMatrix.setText(Parser.instance_fraction.toString(matrix));
+        textField_inlineMatrix.setText(ParserFraction.toString(matrix));
     }
 
     private void loadMatrixCSV(File file) throws IOException {
@@ -347,10 +343,10 @@ public class MatrixPanel extends JPanel {
         }
 
         if (DataType.current == DataType.BIG_DECIMAL && matrix instanceof BigDecimal[][]) {
-            textField_inlineMatrix.setText(Parser.instance_bigDecimal.toString((BigDecimal[][]) matrix));
+            textField_inlineMatrix.setText(ParserBigDecimal.toString((BigDecimal[][]) matrix));
         }
         else if (DataType.current == DataType.FRACTION && matrix instanceof Fraction[][]) {
-            textField_inlineMatrix.setText(Parser.instance_fraction.toString((Fraction[][]) matrix));
+            textField_inlineMatrix.setText(ParserFraction.toString((Fraction[][]) matrix));
         }
     }
 }

@@ -1,7 +1,5 @@
 package backend;
 
-import middleware.base.Fraction;
-
 import javax.swing.*;
 import java.math.BigDecimal;
 
@@ -12,9 +10,8 @@ import java.math.BigDecimal;
  * @version 1.0
  * @since 1.0 (2022/07/04)
  */
-public class Parser {
+public class ParserBigDecimal {
     //------------------------------------------------------------------------------------------------------------------
-    private Parser() {}
     /**
      * BigDecimalhis method parses a matrix to string. It needs the methods
      * toString(BigDecimal[]) and insertLinebreak(String[]) in order to do that.

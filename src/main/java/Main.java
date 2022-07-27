@@ -1,8 +1,4 @@
 import frontend.gui.MatrixAdditionGUI;
-import frontend.gui.MatrixPotencyGUI;
-import middleware.ArithmeticOperations;
-
-import java.math.BigDecimal;
 
 /**
  * Main class of the software project MatrixCalculation.
@@ -23,13 +19,12 @@ public class Main {
 
          */
 
-        new MatrixAdditionGUI<BigDecimal>();
+        new MatrixAdditionGUI();
         //new MatrixSubtractionGUI();
         //new MatrixMultiplicationGUI();
         //new MatrixInverseMultiplicationGUI();
         //new MatrixDeterminantGUI();
         //new MatrixInversionGUI();
         //new MatrixPotencyGUI();
-        }
     }
 }

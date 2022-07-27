@@ -1,10 +1,13 @@
 package frontend.base.frame;
 
+import middleware.base.DataType;
+import middleware.base.Fraction;
+
 import javax.swing.*;
 import java.awt.*;
 import java.math.BigDecimal;
 
-public class OpenMatrixGUI<T> extends JFrame {
+public class OpenMatrixGUI extends JFrame {
     /**
      * This method opens a JFrame for representation a matrix.
      * The JTextFields contains the value of each cell.
@@ -12,7 +15,7 @@ public class OpenMatrixGUI<T> extends JFrame {
      * @param parent The parent Frame for hiding and showing.
      * @param matrix The multidimensional style of a matrix.
      */
-    public OpenMatrixGUI(JFrame parent, T[][] matrix) {
+    public OpenMatrixGUI(JFrame parent, Object[][] matrix) {
         if (matrix == null) {
             JOptionPane.showMessageDialog(null,"Matrix does not contain data!",
                     "Parse Error", JOptionPane.ERROR_MESSAGE, null);
@@ -36,10 +39,19 @@ public class OpenMatrixGUI<T> extends JFrame {
         }
 
         var x = 0;
-        for (T[] rows: matrix) {
-            for (T value: rows) {
-                textFields_matrix[x].setText(value.toString());
-                x++;
+        if (DataType.current == DataType.BIG_DECIMAL && matrix instanceof BigDecimal[][]) {
+            for (BigDecimal[] rows: (BigDecimal[][]) matrix) {
+                for (BigDecimal value: rows) {
+                    textFields_matrix[x].setText(value.toString());
+                    x++;
+                }
+            }
+        } else if (DataType.current == DataType.FRACTION && matrix instanceof Fraction[][]) {
+            for (Fraction[] rows: (Fraction[][]) matrix) {
+                for (Fraction value: rows) {
+                    textFields_matrix[x].setText(value.toString());
+                    x++;
+                }
             }
         }
 

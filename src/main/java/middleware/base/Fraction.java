@@ -16,7 +16,8 @@ public class Fraction implements INumberDatatype {
         numerator = value;
         denominator = BigDecimal.ONE;
     }
-    private Fraction shorten() {
+    @Override
+    public Fraction shorten() {
         var numerator = this.numerator.divide(ggt(this.numerator, this.denominator));
         var denominator = this.denominator.divide(ggt(this.numerator, this.denominator));
         return new Fraction(numerator, denominator);
@@ -40,12 +41,20 @@ public class Fraction implements INumberDatatype {
 
     @Override
     public INumberDatatype add(INumberDatatype augend) {
-        return null;
+        var numeratorLeft = this.numerator.multiply(augend.getDenominator());
+        var numeratorRight = augend.getNumerator().multiply(this.denominator);
+        var numerator = numeratorLeft.add(numeratorRight);
+        var denominator = this.denominator.multiply(augend.getDenominator());
+        return new Fraction(numerator, denominator).shorten();
     }
 
     @Override
     public INumberDatatype subtract(INumberDatatype subtrahend) {
-        return null;
+        var numeratorLeft = this.numerator.multiply(subtrahend.getDenominator());
+        var numeratorRight = subtrahend.getNumerator().multiply(this.denominator);
+        var numerator = numeratorLeft.subtract(numeratorRight);
+        var denominator = this.denominator.multiply(subtrahend.getDenominator());
+        return new Fraction(numerator, denominator).shorten();
     }
 
     @Override
@@ -56,7 +65,9 @@ public class Fraction implements INumberDatatype {
     }
 
     @Override
-    public INumberDatatype divide(INumberDatatype divisor) {
+    public INumberDatatype divide(INumberDatatype divisor) throws ArithmeticException {
+        if (divisor.shorten().equals(ZERO))
+            throw new ArithmeticException("Division by zero");
         var numerator = this.numerator.divide(divisor.getDenominator());
         var denominator = this.denominator.divide(divisor.getNumerator());
         return new Fraction(numerator, denominator);
@@ -65,6 +76,8 @@ public class Fraction implements INumberDatatype {
     @SuppressWarnings("BigDecimalLegacyMethod")
     @Override
     public INumberDatatype divide(INumberDatatype divisor, int scale, int roundingMode) {
+        if (divisor.shorten().equals(ZERO))
+            throw new ArithmeticException("Division by zero");
         var numerator = this.numerator.divide(divisor.getDenominator(), scale, roundingMode);
         var denominator = this.denominator.divide(divisor.getNumerator(), scale, roundingMode);
         return new Fraction(numerator, denominator);
@@ -82,7 +95,9 @@ public class Fraction implements INumberDatatype {
 
     @Override
     public int compareTo(INumberDatatype val) {
-        return 0;
+        var numeratorLeft = this.numerator.multiply(val.getDenominator());
+        var numeratorRight = val.getNumerator().multiply(this.denominator);
+        return numeratorLeft.compareTo(numeratorRight);
     }
 
     @Override

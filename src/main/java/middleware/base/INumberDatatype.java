@@ -21,4 +21,7 @@ public interface INumberDatatype {
     default BigDecimal getDenominator() {
         return null;
     }
+    default INumberDatatype shorten() {
+        return null;
+    }
 }

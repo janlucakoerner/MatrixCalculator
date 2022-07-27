@@ -6,22 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1939703e-de80-4a8b-b4eb-eb2894aaa097" name="Changes" comment="2022/07/27">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/backend/ParserBigDecimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/ParserBigDecimal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/backend/ParserFraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/ParserFraction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/base/frame/MatrixAndNumberOperationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/base/frame/MatrixAndNumberOperationGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/base/frame/OneMatrixOperationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/base/frame/OneMatrixOperationGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/base/frame/OpenMatrixGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/base/frame/OpenMatrixGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/base/panel/NumberPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/base/panel/NumberPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/gui/MatrixAdditionGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/gui/MatrixAdditionGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/gui/MatrixDeterminantGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/gui/MatrixDeterminantGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/gui/MatrixInverseMultiplicationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/gui/MatrixInverseMultiplicationGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/gui/MatrixInversionGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/gui/MatrixInversionGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/gui/MatrixMultiplicationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/gui/MatrixMultiplicationGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/gui/MatrixPotencyGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/gui/MatrixPotencyGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/gui/MatrixSubtractionGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/gui/MatrixSubtractionGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/middleware/base/ArithmeticOperationsFraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/middleware/ArithmeticOperationsFraction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/middleware/base/DataType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/middleware/base/DataType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/middleware/base/INumberDatatype.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/middleware/base/INumberDatatype.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658951968893</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="2022/07/27">
+      <created>1658952358894</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1658952358894</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

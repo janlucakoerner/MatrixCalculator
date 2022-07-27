@@ -1,9 +1,13 @@
 package frontend.base.panel;
 
+import middleware.base.DataType;
+import middleware.base.Fraction;
+
 import javax.swing.*;
 import java.awt.*;
+import java.math.BigDecimal;
 
-public class NumberPanel<T> extends JPanel {
+public class NumberPanel extends JPanel {
     private final JLabel label = new JLabel();
     private final JTextField textField = new JTextField();
     public NumberPanel(JFrame parent) {
@@ -31,7 +35,12 @@ public class NumberPanel<T> extends JPanel {
     public void setEditable(boolean editable) {
         textField.setEditable(editable);
     }
-    public T getValue() {
-        return new T(textField.getText());
+    public Object getValue() {
+        if (DataType.current == DataType.BIG_DECIMAL)
+            return new BigDecimal(textField.getText());
+        else if (DataType.current == DataType.FRACTION)
+            return new Fraction(textField.getText());
+        else
+            return null;
     }
 }

@@ -12,18 +12,16 @@ import java.math.BigDecimal;
  * @version 1.0
  * @since 1.0 (2022/07/04)
  */
-public class Parser<T> {
-    public static final Parser<BigDecimal> instance_bigDecimal = new Parser<>();
-    public static final Parser<Fraction> instance_fraction = new Parser<>();
+public class Parser {
     //------------------------------------------------------------------------------------------------------------------
     private Parser() {}
     /**
-     * This method parses a matrix to string. It needs the methods
-     * toString(T[]) and insertLinebreak(String[]) in order to do that.
+     * BigDecimalhis method parses a matrix to string. It needs the methods
+     * toString(BigDecimal[]) and insertLinebreak(String[]) in order to do that.
      * @param matrix A matrix.
      * @return The given matrix as String.
      */
-    public String toString(T[][] matrix) {
+    public static String toString(BigDecimal[][] matrix) {
         if (matrix == null) {
             return "";
         }
@@ -35,11 +33,11 @@ public class Parser<T> {
     }
 
     /**
-     * This method inserts between to T values a semicolon.
-     * @param row An array with T values.
+     * This method inserts between to BigDecimal values a semicolon.
+     * @param row An array with BigDecimal values.
      * @return The changed values as String.
      */
-    private String toString(T[] row) {
+    private static String toString(BigDecimal[] row) {
         var sb = new StringBuilder();
         for (int i = 0; i < row.length; i++) {
             if (i < row.length - 1) {
@@ -56,7 +54,7 @@ public class Parser<T> {
      * @param lines An array with String values
      * @return The changed lines as String
      */
-    private String insertLinebreak(String[] lines) {
+    private static String insertLinebreak(String[] lines) {
         var sb = new StringBuilder();
         for (int i = 0; i < lines.length; i++) {
             if (i < lines.length - 1) {
@@ -75,7 +73,7 @@ public class Parser<T> {
      * @param matrix The inline style of a matrix
      * @return The multidimensional style of a matrix
      */
-    public T[][] getMatrixFromInline(String matrix) {
+    public static BigDecimal[][] getMatrixFromInline(String matrix) {
         if (!matrix.equals("")) {
             var lines = matrix.split("\\\\n");
             var rowCount = lines.length;
@@ -90,13 +88,13 @@ public class Parser<T> {
                 }
                 string_matrix[i] = values;
             }
-            var T_matrix = new T[rowCount][columnCount];
+            var bigDecimal_matrix = new BigDecimal[rowCount][columnCount];
             for (int row = 0; row < rowCount; row++) {
                 for (int column = 0; column < columnCount; column++) {
-                    T_matrix[row][column] = new T(string_matrix[row][column]);
+                    bigDecimal_matrix[row][column] = new BigDecimal(string_matrix[row][column]);
                 }
             }
-            return T_matrix;
+            return bigDecimal_matrix;
         }
         return null;
     }

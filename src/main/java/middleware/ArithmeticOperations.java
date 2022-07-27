@@ -1,6 +1,7 @@
 package middleware;
 
 import javax.swing.*;
+import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 /**
@@ -11,8 +12,8 @@ import java.math.RoundingMode;
  * @version 1.0
  * @since 1.0 (2022/07/26)
  */
-@SuppressWarnings("TMethodWithoutRoundingCalled")
-public abstract class ArithmeticOperations<T> {
+@SuppressWarnings("BigDecimalMethodWithoutRoundingCalled")
+public abstract class ArithmeticOperations {
 	/**
 	 * This method <b>matrixMultiplication</b> multiplies two matrices:<br>
 	 * &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {@code matricesA} x {@code matricesB} = {@code result}
@@ -21,7 +22,7 @@ public abstract class ArithmeticOperations<T> {
 	 * 						Both parameters should contain a matrix.						
 	 * @return <b>result</b>	of data type {@code T[][]} delivers a matrix.
 	 */
-	public static T[][] matrixMultiplication(T[][] matricesA, T[][] matricesB) {
+	public static BigDecimal[][] matrixMultiplication(BigDecimal[][] matricesA, BigDecimal[][] matricesB) {
 		if (matricesA == null || matricesB == null) {
 			JOptionPane.showMessageDialog(null, "Matrices equals null!",
 					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
@@ -31,10 +32,10 @@ public abstract class ArithmeticOperations<T> {
 					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
 			return null;
 		}
-		T[][] result = new T[matricesA.length][matricesB[0].length];
+		BigDecimal[][] result = new BigDecimal[matricesA.length][matricesB[0].length];
 		for (int x = 0; x < result.length; x++) {
 			for (int y = 0; y < result[0].length; y++) {
-				result[x][y] = new T(0);
+				result[x][y] = BigDecimal.ZERO;
 			}
 		}
 		for (int x = 0; x < result.length; x++) {
@@ -58,23 +59,23 @@ public abstract class ArithmeticOperations<T> {
 	 * @param pMatrix of data type {@code T[][]} should contain a square matrix 
 	 * @param pExponent of data type {@code Integer} should contain an exponent
 	 */
-	public static T[][] matrixPotency(T[][] pMatrix, T pExponent) {
+	public static BigDecimal[][] matrixPotency(BigDecimal[][] pMatrix, BigDecimal pExponent) {
 		if (pMatrix.length != pMatrix[0].length) {
 			JOptionPane.showMessageDialog(null, "Matrix must be a square matrix!",
 					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
 			return null;
 		}
-		if (pExponent.compareTo(new T(1)) > 0) {
-			T[][] result = pMatrix;
-			for (T i = T.ONE; i.compareTo(pExponent) < 0; i = i.add(T.ONE)) {
+		if (pExponent.compareTo(BigDecimal.ONE) > 0) {
+			BigDecimal[][] result = pMatrix;
+			for (BigDecimal i = BigDecimal.ONE; i.compareTo(pExponent) < 0; i = i.add(BigDecimal.ONE)) {
 				result = matrixMultiplication(result, pMatrix);
 			}
 			return result;
-		} else if (pExponent.equals(T.ONE)) {
+		} else if (pExponent.equals(BigDecimal.ONE)) {
 			return pMatrix;
-		} else if (pExponent.equals(T.ZERO)) {
+		} else if (pExponent.equals(BigDecimal.ZERO)) {
 			return getIdentityMatrix(pMatrix.length);
-		} else if (pExponent.equals(new T(-1))) {
+		} else if (pExponent.equals(new BigDecimal(-1))) {
 			return matrixInversion(pMatrix);
 		} else {
 			return matrixInversion(matrixPotency(pMatrix, pExponent.abs()));
@@ -85,14 +86,14 @@ public abstract class ArithmeticOperations<T> {
 	 * @param pDimension of data type {@code Integer} should contain the dimension of the matrix
 	 * @return <b>result</b> of data type {@code T[][]} delivers a matrix
 	 */
-	private static T[][] getIdentityMatrix(int pDimension) {
-		T[][] result = new T[pDimension][pDimension];
+	private static BigDecimal[][] getIdentityMatrix(int pDimension) {
+		BigDecimal[][] result = new BigDecimal[pDimension][pDimension];
 		for (int i = 0; i < result.length; i++) {
 			for (int j = 0; j < result.length; j++) {
 				if (i == j) {
-					result[j][i] = new T(1);
+					result[j][i] = new BigDecimal(1);
 				} else {
-					result[j][i] = new T(0);
+					result[j][i] = new BigDecimal(0);
 				}
 			}
 		}
@@ -104,7 +105,7 @@ public abstract class ArithmeticOperations<T> {
 	 * @param pMatrix of data type {@code T[][]} should contain a (not singular) square matrix.
 	 * @return <b>inverse</b> of data type {@code T[][]} delivers a matrix.
 	 */
-	public static T[][] matrixInversion(T[][] pMatrix) {
+	public static BigDecimal[][] matrixInversion(BigDecimal[][] pMatrix) {
 		if (pMatrix == null) {
 			JOptionPane.showMessageDialog(null, "Matrices equals null!",
 					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
@@ -113,31 +114,31 @@ public abstract class ArithmeticOperations<T> {
 			JOptionPane.showMessageDialog(null, "Matrix must be a square matrix!",
 					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
 			return null;
-		} else if (T.ZERO.equals(determinant(pMatrix, pMatrix.length, pMatrix.length))) {
+		} else if (BigDecimal.ZERO.equals(determinant(pMatrix, pMatrix.length, pMatrix.length))) {
 			JOptionPane.showMessageDialog(null, "Matrix must be a non singular matrix!",
 					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
 			return null;
 		}
-		T[][] inverse = new T[pMatrix.length][pMatrix.length];
+		BigDecimal[][] inverse = new BigDecimal[pMatrix.length][pMatrix.length];
 		if (pMatrix.length == 2) {
-			inverse[0][0] = (new T(1).divide(determinant(pMatrix, pMatrix.length, pMatrix.length))).multiply(pMatrix[1][1]);
-			inverse[0][1] = (new T(1).divide(determinant(pMatrix, pMatrix.length, pMatrix.length))).multiply(new T(-1).multiply(pMatrix[0][1]));
-			inverse[1][0] = (new T(1).divide(determinant(pMatrix, pMatrix.length, pMatrix.length))).multiply(new T(-1).multiply(pMatrix[1][0]));
-			inverse[1][1] = (new T(1).divide(determinant(pMatrix, pMatrix.length, pMatrix.length))).multiply(pMatrix[0][0]);
+			inverse[0][0] = (BigDecimal.ONE.divide(determinant(pMatrix, pMatrix.length, pMatrix.length))).multiply(pMatrix[1][1]);
+			inverse[0][1] = (BigDecimal.ONE.divide(determinant(pMatrix, pMatrix.length, pMatrix.length))).multiply(new BigDecimal(-1).multiply(pMatrix[0][1]));
+			inverse[1][0] = (BigDecimal.ONE.divide(determinant(pMatrix, pMatrix.length, pMatrix.length))).multiply(new BigDecimal(-1).multiply(pMatrix[1][0]));
+			inverse[1][1] = (BigDecimal.ONE.divide(determinant(pMatrix, pMatrix.length, pMatrix.length))).multiply(pMatrix[0][0]);
 		} else {
 			// minors and cofactors
 			for (int i = 0; i < pMatrix.length; i++) {
 				for (int j = 0; j < pMatrix[i].length; j++) {
-					T[][] minor = minor(pMatrix, i, j);
-					inverse[i][j] = new T(-1).pow(i + j).multiply(determinant(minor, minor.length, minor.length));
+					BigDecimal[][] minor = minor(pMatrix, i, j);
+					inverse[i][j] = new BigDecimal(-1).pow(i + j).multiply(determinant(minor, minor.length, minor.length));
 				}
 			}
 
 			// adjugate and determinant
-			T det = T.ONE.divide(determinant(pMatrix, pMatrix.length, pMatrix.length), (int) Math.pow(2, 5), RoundingMode.HALF_UP);
+			BigDecimal det = BigDecimal.ONE.divide(determinant(pMatrix, pMatrix.length, pMatrix.length), (int) Math.pow(2, 5), RoundingMode.HALF_UP);
 			for (int i = 0; i < inverse.length; i++) {
 				for (int j = 0; j <= i; j++) {
-					T temp = inverse[i][j];
+					BigDecimal temp = inverse[i][j];
 					inverse[i][j] = inverse[j][i].multiply(det);
 					inverse[j][i] = temp.multiply(det);
 				}
@@ -153,15 +154,15 @@ public abstract class ArithmeticOperations<T> {
 	 * @param pColumn of data type {@code int} should contain a column
 	 * @return <b>minor</b> of data type {@code T[][]} delivers a minor square matrix .
 	 */
-	private static T[][] minor(T[][] pMatrix, int pRow, int pColumn) {
-		T[][] minor = new T[pMatrix.length - 1][pMatrix.length - 1];
+	private static BigDecimal[][] minor(BigDecimal[][] pMatrix, int pRow, int pColumn) {
+		BigDecimal[][] minor = new BigDecimal[pMatrix.length - 1][pMatrix.length - 1];
 		for (int i = 0; i < pMatrix.length; i++)
 			for (int j = 0; i != pRow && j < pMatrix[i].length; j++)
 				if (j != pColumn)
 					minor[i < pRow ? i : i - 1][j < pColumn ? j : j - 1] = pMatrix[i][j];
 		return minor;
 	}
-	public static T determinant(T[][] pMatrix, int current_dimension, int start_dimension) {
+	public static BigDecimal determinant(BigDecimal[][] pMatrix, int current_dimension, int start_dimension) {
 		if (pMatrix == null) {
 			JOptionPane.showMessageDialog(null, "Matrices equals null!",
 					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
@@ -174,19 +175,19 @@ public abstract class ArithmeticOperations<T> {
 		if (current_dimension == 1)
 			return pMatrix[0][0];
 
-		T result = T.ZERO;
-		T[][] cofactors = new T[start_dimension][start_dimension];
-		T sign = T.ONE;
+		BigDecimal result = BigDecimal.ZERO;
+		BigDecimal[][] cofactors = new BigDecimal[start_dimension][start_dimension];
+		BigDecimal sign = BigDecimal.ONE;
 
 		for (int i = 0; i < current_dimension; i++) {
 			cofactor(pMatrix, cofactors, i, current_dimension);
 			result = result.add(sign.multiply(pMatrix[0][i]).multiply(determinant(cofactors, current_dimension - 1, start_dimension)));
-			sign = new T(-1).multiply(sign);
+			sign = new BigDecimal(-1).multiply(sign);
 		}
 		return result;
     }
 
-	private static void cofactor(T[][] pMatrix, T[][] cofactors, int y, int dimension) {
+	private static void cofactor(BigDecimal[][] pMatrix, BigDecimal[][] cofactors, int y, int dimension) {
 		int i = 0, j = 0;
 		for (int row = 0; row < dimension; row++) {
 			for (int column = 0; column < dimension; column++) {
@@ -207,7 +208,7 @@ public abstract class ArithmeticOperations<T> {
 	 * @param matricesB of data type {@code T[][]} should contain a square matrix.
 	 * @return <b>result</b> of data type {@code T[][]} delivers a square matrix.
 	 */
-	public static T[][] matrixInverseMultiplication(T[][] matricesA, T[][] matricesB) {
+	public static BigDecimal[][] matrixInverseMultiplication(BigDecimal[][] matricesA, BigDecimal[][] matricesB) {
 		if (matricesA == null || matricesB == null) {
 			JOptionPane.showMessageDialog(null, "Matrices equals null!",
 					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
@@ -226,7 +227,7 @@ public abstract class ArithmeticOperations<T> {
 	 * @param matricesB of data type {@code T[][]} should contain a matrix.
 	 * @return <b>result</b> of data type {@code T[][]} delivers a matrix.
 	 */
-	public static T[][] matrixSubtraction(T[][] matricesA, T[][] matricesB) {
+	public static BigDecimal[][] matrixSubtraction(BigDecimal[][] matricesA, BigDecimal[][] matricesB) {
 		if (matricesA == null || matricesB == null) {
 			JOptionPane.showMessageDialog(null, "Matrices equals null!",
 					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
@@ -236,7 +237,7 @@ public abstract class ArithmeticOperations<T> {
 					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
 			return null;
 		}
-		T[][] result = new T[matricesA.length][matricesB.length];
+		BigDecimal[][] result = new BigDecimal[matricesA.length][matricesB.length];
 		for (int i = 0; i < matricesA[0].length; i++) {
 			for (int j = 0; j < matricesA.length; j++) {
 				result[j][i] = matricesA[j][i].subtract(matricesB[j][i]);
@@ -251,7 +252,7 @@ public abstract class ArithmeticOperations<T> {
 	 * @param matricesB of data type {@code T[][]} should contain a matrix.
 	 * @return <b>result</b> of data type {@code T[][]} delivers a matrix.
 	 */
-	public static T[][] matrixAddition(T[][] matricesA, T[][] matricesB) {
+	public static BigDecimal[][] matrixAddition(BigDecimal[][] matricesA, BigDecimal[][] matricesB) {
 		if (matricesA == null || matricesB == null) {
 			JOptionPane.showMessageDialog(null, "Matrices equals null!",
 					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
@@ -261,7 +262,7 @@ public abstract class ArithmeticOperations<T> {
 					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
 			return null;
 		}
-		T[][] result = new T[matricesA.length][matricesA[0].length];
+		BigDecimal[][] result = new BigDecimal[matricesA.length][matricesA[0].length];
 		for (int i = 0; i < matricesA[0].length; i++) {
 			for (int j = 0; j < matricesA.length; j++) {
 				result[j][i] = matricesA[j][i].add(matricesB[j][i]);
@@ -277,11 +278,11 @@ public abstract class ArithmeticOperations<T> {
 	 * @param pVector of data type {@code T[]} should contain a vector.
 	 * @return <b>result</b> of data type {@code T[]} delivers a vector.
 	 */
-	public static T[] solveLinearSystemOfEquations(T[][] pMatrix, T[] pVector) {
-		T[] result = null;
+	public static BigDecimal[] solveLinearSystemOfEquations(BigDecimal[][] pMatrix, BigDecimal[] pVector) {
+		BigDecimal[] result = null;
 		if (pMatrix.length == pVector.length) {
-			result = new T[pVector.length];
-			T[][] inverse = matrixInversion(pMatrix);
+			result = new BigDecimal[pVector.length];
+			BigDecimal[][] inverse = matrixInversion(pMatrix);
 			if (inverse == null)  {
 				JOptionPane.showMessageDialog(null, "Matrix could not be inverted!",
 						"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);

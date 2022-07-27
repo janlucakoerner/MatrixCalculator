@@ -1,5 +1,7 @@
 package frontend.base.frame;
 
+import middleware.base.DataType;
+import middleware.base.Fraction;
 import middleware.base.ICalculation;
 import frontend.base.panel.MatrixPanel;
 import frontend.base.panel.NumberPanel;
@@ -7,6 +9,7 @@ import backend.Parser;
 
 import javax.swing.*;
 import java.awt.*;
+import java.math.BigDecimal;
 
 public class MatrixAndNumberOperationGUI extends JFrame {
     private final JButton button = new JButton();
@@ -26,10 +29,17 @@ public class MatrixAndNumberOperationGUI extends JFrame {
         add(panel, BorderLayout.CENTER);
         button.setText("Calculate");
         button.addActionListener(e -> {
-            var matrix = Parser.getMatrixFromInline(matrixPanel.getInline());
-            var number = numberPanel.getValue();
-            var matrixResult = calculation.matrixCalculation(matrix, number);
-            matrixPanelResult.updateInline(matrixResult);
+            if (DataType.current == DataType.BIG_DECIMAL) {
+                var matrix = Parser.instance_bigDecimal.getMatrixFromInline(matrixPanel.getInline());
+                var number = numberPanel.getValue();
+                var matrixResult = (BigDecimal[][]) calculation.matrixCalculation(matrix, number);
+                matrixPanelResult.updateInline(matrixResult);
+            } else if (DataType.current == DataType.FRACTION) {
+                var matrix = Parser.instance_fraction.getMatrixFromInline(matrixPanel.getInline());
+                var number = numberPanel.getValue();
+                var matrixResult = (Fraction[][]) calculation.matrixCalculation(matrix, number);
+                matrixPanelResult.updateInline(matrixResult);
+            }
         });
         add(button, BorderLayout.SOUTH);
         pack();

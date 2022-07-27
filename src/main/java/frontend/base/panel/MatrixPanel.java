@@ -42,11 +42,11 @@ public class MatrixPanel extends JPanel {
         button_openMatrixDialog.setText("Open Matrix");
         button_openMatrixDialog.addActionListener(e-> {
             if (DataType.current == DataType.BIG_DECIMAL) {
-                matrix = Parser.instance_bigDecimal.getMatrixFromInline(textField_inlineMatrix.getText());
-                openMatrixGUI = new OpenMatrixGUI<BigDecimal>(parent, (BigDecimal[][]) matrix);
+                matrix = Parser.getMatrixFromInline(textField_inlineMatrix.getText());
+                openMatrixGUI = new OpenMatrixGUI<>(parent, (BigDecimal[][]) matrix);
             } else if (DataType.current == DataType.FRACTION) {
-                matrix = Parser.instance_fraction.getMatrixFromInline(textField_inlineMatrix.getText());
-                openMatrixGUI = new OpenMatrixGUI<Fraction>(parent, (Fraction[][]) matrix);
+                matrix = Parser.getMatrixFromInline(textField_inlineMatrix.getText());
+                openMatrixGUI = new OpenMatrixGUI<>(parent, (Fraction[][]) matrix);
             }
         });
 

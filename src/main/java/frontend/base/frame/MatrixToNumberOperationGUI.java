@@ -1,5 +1,6 @@
 package frontend.base.frame;
 
+import middleware.base.DataType;
 import middleware.base.ICalculation;
 import frontend.base.panel.MatrixPanel;
 import backend.Parser;
@@ -26,9 +27,15 @@ public class MatrixToNumberOperationGUI extends JFrame {
         add(panel, BorderLayout.CENTER);
         button.setText("Calculate");
         button.addActionListener(e -> {
-            var matrix1 = Parser.getMatrixFromInline(matrixPanel1.getInline());
-            var result = calculation.numberCalculation(matrix1);
-            textField_result.setText(result.toString());
+            if (DataType.current == DataType.BIG_DECIMAL) {
+                var matrix1 = Parser.instance_bigDecimal.getMatrixFromInline(matrixPanel1.getInline());
+                var result = calculation.numberCalculation(matrix1);
+                textField_result.setText(result.toString());
+            } else if (DataType.current == DataType.FRACTION) {
+                var matrix1 = Parser.instance_fraction.getMatrixFromInline(matrixPanel1.getInline());
+                var result = calculation.numberCalculation(matrix1);
+                textField_result.setText(result.toString());
+            }
         });
         add(button, BorderLayout.SOUTH);
         pack();

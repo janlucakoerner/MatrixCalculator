@@ -26,7 +26,7 @@ public class MatrixToNumberOperationGUI extends JFrame {
         button.setText("Calculate");
         button.addActionListener(e -> {
             var matrix1 = Parser.getMatrixFromInline(matrixPanel1.getInline());
-            var result = calculation.matrixToNumberCalculation(matrix1);
+            var result = calculation.numberCalculation(matrix1);
             textField_result.setText(result.toString());
         });
         add(button, BorderLayout.SOUTH);

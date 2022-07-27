@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1939703e-de80-4a8b-b4eb-eb2894aaa097" name="Changes" comment="2022/07/22">
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixDeterminantGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/base/MatrixToNumberOperationGUI.java" afterDir="false" />
+    <list default="true" id="1939703e-de80-4a8b-b4eb-eb2894aaa097" name="Changes" comment="2022/07/27">
+      <change afterPath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixPotencyGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gui/base/MatrixAndNumberOperationGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gui/base/NumberPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/arithmeticoperations/ArithmeticOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arithmeticoperations/ArithmeticOperations.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/arithmeticoperations/Calculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arithmeticoperations/Calculation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixDeterminantGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/arithmeticoperations/MatrixDeterminantGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/base/MatrixPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/base/MatrixPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/base/MatrixToNumberOperationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/base/MatrixToNumberOperationGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,16 +41,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/janlucakoerner/Library/CloudStorage/OneDrive-Persönlich/00_Programme/11_intellij_idea_workspace/MatrixCalculator/src/main/java",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/janlucakoerner/Library/CloudStorage/OneDrive-Persönlich/00_Programme/11_intellij_idea_workspace/MatrixCalculator/src/main/java&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java" />
@@ -128,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658524292974</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="2022/07/27">
+      <created>1658902675870</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1658902675870</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,7 +160,8 @@
     <MESSAGE value="commit" />
     <MESSAGE value="2022/07/21" />
     <MESSAGE value="2022/07/22" />
-    <option name="LAST_COMMIT_MESSAGE" value="2022/07/22" />
+    <MESSAGE value="2022/07/27" />
+    <option name="LAST_COMMIT_MESSAGE" value="2022/07/27" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

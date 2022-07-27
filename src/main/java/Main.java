@@ -30,6 +30,7 @@ public class Main {
         //new MatrixMultiplicationGUI();
         //new MatrixInverseMultiplicationGUI();
         //new MatrixDeterminantGUI();
-        new MatrixInversionGUI();
+        //new MatrixInversionGUI();
+        new MatrixPotencyGUI();
     }
 }

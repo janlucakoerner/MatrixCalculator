@@ -2,7 +2,6 @@ package arithmeticoperations;
 
 import javax.swing.*;
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.math.RoundingMode;
 
 /**
@@ -52,36 +51,35 @@ public abstract class ArithmeticOperations {
 	 * This method <b>matrixPotency</b> exponentiate {@code pMatrix} by {@code pExponent}.<br>
 	 * - If {@code pExponent} is greater than <b>1</b> it calculates the potency of {@code pMatrix} by {@code pExponent}.<br>
 	 * - If {@code pExponent} is equal than <b>1</b>  the method delivers {@code pMatrix}.<br>
-	 * - If {@code pExponent} is equal than <b>O</b> the method delivers a identity matrix.<br>
+	 * - If {@code pExponent} is equal than <b>O</b> the method delivers an identity matrix.<br>
 	 * - If {@code pExponent} is equal than <b>-1</b> the method delivers the inverse of {@code pMatrix}.<br>
 	 * - If {@code pExponent} is less than <b>-1</b> it first calculates the potency of {@code pMatrix} by the absolute value of {@code pExponent} 
 	 * and second it calculates the inverse of this potency.<br>
 	 *
 	 * @param pMatrix of data type {@code BigDecimal[][]} should contain a square matrix 
-	 * @param pExponent of data type {@code Integer} should contain a exponent
+	 * @param pExponent of data type {@code Integer} should contain an exponent
 	 */
-	public static BigDecimal[][] matrixPotency(BigDecimal[][] pMatrix, int pExponent) {
-		BigDecimal[][] result = null;
+	public static BigDecimal[][] matrixPotency(BigDecimal[][] pMatrix, BigDecimal pExponent) {
 		if (pMatrix.length != pMatrix[0].length) {
 			JOptionPane.showMessageDialog(null, "Matrix must be a square matrix!",
 					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
 			return null;
 		}
-		if (pExponent > 1) {
-			result = pMatrix;
-			for (int i = 1; i < pExponent; i++) {
+		if (pExponent.compareTo(new BigDecimal(1)) > 0) {
+			BigDecimal[][] result = pMatrix;
+			for (BigDecimal i = BigDecimal.ONE; i.compareTo(pExponent) < 0; i = i.add(BigDecimal.ONE)) {
 				result = matrixMultiplication(result, pMatrix);
 			}
-		} else if (pExponent == 1) {
-			result = pMatrix;
-		} else if (pExponent == 0) {
-			result = getIdentityMatrix(pMatrix.length);
-		} else if (pExponent == -1) {
-			result = matrixInversion(pMatrix);
+			return result;
+		} else if (pExponent.equals(BigDecimal.ONE)) {
+			return pMatrix;
+		} else if (pExponent.equals(BigDecimal.ZERO)) {
+			return getIdentityMatrix(pMatrix.length);
+		} else if (pExponent.equals(new BigDecimal(-1))) {
+			return matrixInversion(pMatrix);
 		} else {
-			result = matrixInversion(matrixPotency(pMatrix, Math.abs(pExponent)));
+			return matrixInversion(matrixPotency(pMatrix, pExponent.abs()));
 		}
-		return result;
 	}
 	/**
 	 * This method <b>getIdentityMatrix</b> creates an identity matrix of the dimension {@code pDimension}
@@ -182,18 +180,18 @@ public abstract class ArithmeticOperations {
 		BigDecimal sign = BigDecimal.ONE;
 
 		for (int i = 0; i < current_dimension; i++) {
-			cofactor(pMatrix, cofactors, 0, i, current_dimension);
+			cofactor(pMatrix, cofactors, i, current_dimension);
 			result = result.add(sign.multiply(pMatrix[0][i]).multiply(determinant(cofactors, current_dimension - 1, start_dimension)));
 			sign = new BigDecimal(-1).multiply(sign);
 		}
 		return result;
     }
 
-	private static void cofactor(BigDecimal[][] pMatrix, BigDecimal[][] cofactors, int x, int y, int dimension) {
+	private static void cofactor(BigDecimal[][] pMatrix, BigDecimal[][] cofactors, int y, int dimension) {
 		int i = 0, j = 0;
 		for (int row = 0; row < dimension; row++) {
 			for (int column = 0; column < dimension; column++) {
-				if (row != x && column != y) {
+				if (row != 0 && column != y) {
 					cofactors[i][j++] = pMatrix[row][column];
 					if (j == dimension - 1) {
 						j = 0;
@@ -273,8 +271,8 @@ public abstract class ArithmeticOperations {
 		return result;
 	}
 	/**
-	 * This method <b>solveLinearSystemOfEquations</b> solves a linear sytem of equations with a square matrix {@code pMatrix} and a vector {@code pVector}.<br>
-	 * First it calculates the inverse of {@code pMatrix}. Then it multply the inverse of {@code pMatrix} with the vector {@code pVector}.<br>
+	 * This method <b>solveLinearSystemOfEquations</b> solves a linear system of equations with a square matrix {@code pMatrix} and a vector {@code pVector}.<br>
+	 * First it calculates the inverse of {@code pMatrix}. Then it multiply the inverse of {@code pMatrix} with the vector {@code pVector}.<br>
 	 *
 	 * @param pMatrix of data type {@code BigDecimal[][]} should contain a square matrix.
 	 * @param pVector of data type {@code BigDecimal[]} should contain a vector.

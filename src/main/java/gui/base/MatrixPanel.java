@@ -17,7 +17,6 @@ import java.math.BigDecimal;
  * @since 1.0 (2022/07/04)
  */
 public class MatrixPanel extends JPanel {
-    private final MatrixPanel instance = this;
     private final JLabel label;
     private final JTextField textField_inlineMatrix;
     private final JButton button_openMatrixDialog;

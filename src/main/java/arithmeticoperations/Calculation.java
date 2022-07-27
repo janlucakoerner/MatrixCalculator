@@ -23,5 +23,8 @@ public interface Calculation {
     default BigDecimal[] vectorCalculation(BigDecimal[] vector1, BigDecimal[] vector2) {
         return null;
     }
-    default BigDecimal matrixToNumberCalculation(BigDecimal[][] matrix) { return null; }
+    default BigDecimal numberCalculation(BigDecimal[][] matrix) { return null; }
+    default BigDecimal[][] matrixCalculation(BigDecimal[][] matrix, BigDecimal number) {
+        return null;
+    }
 }

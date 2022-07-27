@@ -9,7 +9,7 @@ import javax.swing.*;
  * to parse a matrix from string or a string from matrix.
  * @author janlucakoerner
  * @version 1.0
- * @since 1.0 (2022/07/04)
+ * @since 1.0 (2022/07/27)
  */
 public class ParserFraction {
     public static String toString(Fraction[][] matrix) {

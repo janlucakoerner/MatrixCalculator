@@ -1,8 +1,15 @@
-package middleware.base;
+package middleware;
+
+import middleware.base.Fraction;
 
 import javax.swing.*;
 import java.util.Objects;
 
+/**
+ * @author janlucakoerner
+ * @version 1.0
+ * @since 1.0 (2022/07/27)
+ */
 public abstract class ArithmeticOperationsFraction {
     public static Fraction[][] matrixMultiplication(Fraction[][] matricesA, Fraction[][] matricesB) {
         if (matricesA == null || matricesB == null) {

@@ -1,7 +1,7 @@
 package frontend.gui;
 
 import middleware.ArithmeticOperationsBigDecimal;
-import middleware.base.ArithmeticOperationsFraction;
+import middleware.ArithmeticOperationsFraction;
 import middleware.base.DataType;
 import middleware.base.Fraction;
 import middleware.base.ICalculation;
@@ -9,7 +9,11 @@ import frontend.base.frame.MatrixAndNumberOperationGUI;
 
 import java.math.BigDecimal;
 
-
+/**
+ * @author janlucakoerner
+ * @version 1.0
+ * @since 1.0 (2022/07/27)
+ */
 public class MatrixPotencyGUI implements ICalculation {
     public MatrixPotencyGUI() {
         var gui = new MatrixAndNumberOperationGUI(this);

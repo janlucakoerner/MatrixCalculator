@@ -1,7 +1,7 @@
 package frontend.gui;
 
 import middleware.ArithmeticOperationsBigDecimal;
-import middleware.base.ArithmeticOperationsFraction;
+import middleware.ArithmeticOperationsFraction;
 import middleware.base.DataType;
 import middleware.base.Fraction;
 import middleware.base.ICalculation;

@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 public class ParserBigDecimal {
     //------------------------------------------------------------------------------------------------------------------
     /**
-     * BigDecimalhis method parses a matrix to string. It needs the methods
+     * This method parses a matrix to string. It needs the methods
      * toString(BigDecimal[]) and insertLinebreak(String[]) in order to do that.
      * @param matrix A matrix.
      * @return The given matrix as String.

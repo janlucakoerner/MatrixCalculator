@@ -1,7 +1,7 @@
 package frontend.gui;
 
 import middleware.ArithmeticOperationsBigDecimal;
-import middleware.base.ArithmeticOperationsFraction;
+import middleware.ArithmeticOperationsFraction;
 import middleware.base.DataType;
 import middleware.base.Fraction;
 import middleware.base.ICalculation;
@@ -14,7 +14,7 @@ import java.math.BigDecimal;
  * @version 1.0
  * @since 1.0 (2022/07/22)
  */
-public class MatrixSubtractionGUI<T> implements ICalculation {
+public class MatrixSubtractionGUI implements ICalculation {
     public MatrixSubtractionGUI() {
         var gui = new TwoMatrixOperationGUI(this);
         gui.setJFrameTitle("Matrix Subtraction");

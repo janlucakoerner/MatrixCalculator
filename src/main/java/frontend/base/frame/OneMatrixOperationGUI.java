@@ -11,6 +11,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.math.BigDecimal;
 
+/**
+ * @author janlucakoerner
+ * @version 1.0
+ * @since 1.0 (2022/07/27)
+ */
 public class OneMatrixOperationGUI extends JFrame {
     private final JButton button = new JButton();
 

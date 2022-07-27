@@ -7,10 +7,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.math.BigDecimal;
 
+/**
+ * @author janlucakoerner
+ * @version 1.0
+ * @since 1.0 (2022/07/27)
+ */
 public class NumberPanel extends JPanel {
     private final JLabel label = new JLabel();
     private final JTextField textField = new JTextField();
-    public NumberPanel(JFrame parent) {
+    public NumberPanel() {
         label.setText("Number:");
         textField.setColumns(30);
 

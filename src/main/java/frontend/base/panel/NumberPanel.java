@@ -2,9 +2,8 @@ package frontend.base.panel;
 
 import javax.swing.*;
 import java.awt.*;
-import java.math.BigDecimal;
 
-public class NumberPanel extends JPanel {
+public class NumberPanel<T> extends JPanel {
     private final JLabel label = new JLabel();
     private final JTextField textField = new JTextField();
     public NumberPanel(JFrame parent) {
@@ -32,7 +31,7 @@ public class NumberPanel extends JPanel {
     public void setEditable(boolean editable) {
         textField.setEditable(editable);
     }
-    public BigDecimal getValue() {
-        return new BigDecimal(textField.getText());
+    public T getValue() {
+        return new T(textField.getText());
     }
 }

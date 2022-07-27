@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.math.BigDecimal;
 
-public class OpenMatrixGUI extends JFrame {
+public class OpenMatrixGUI<T> extends JFrame {
     /**
      * This method opens a JFrame for representation a matrix.
      * The JTextFields contains the value of each cell.
@@ -12,7 +12,7 @@ public class OpenMatrixGUI extends JFrame {
      * @param parent The parent Frame for hiding and showing.
      * @param matrix The multidimensional style of a matrix.
      */
-    public OpenMatrixGUI(JFrame parent, BigDecimal[][] matrix) {
+    public OpenMatrixGUI(JFrame parent, T[][] matrix) {
         if (matrix == null) {
             JOptionPane.showMessageDialog(null,"Matrix does not contain data!",
                     "Parse Error", JOptionPane.ERROR_MESSAGE, null);
@@ -36,8 +36,8 @@ public class OpenMatrixGUI extends JFrame {
         }
 
         var x = 0;
-        for (BigDecimal[] rows: matrix) {
-            for (BigDecimal value: rows) {
+        for (T[] rows: matrix) {
+            for (T value: rows) {
                 textFields_matrix[x].setText(value.toString());
                 x++;
             }

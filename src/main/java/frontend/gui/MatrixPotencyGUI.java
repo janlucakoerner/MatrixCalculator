@@ -4,7 +4,6 @@ import middleware.ArithmeticOperations;
 import middleware.base.ICalculation;
 import frontend.base.frame.MatrixAndNumberOperationGUI;
 
-import java.math.BigDecimal;
 
 public class MatrixPotencyGUI implements ICalculation {
     public MatrixPotencyGUI() {
@@ -13,7 +12,7 @@ public class MatrixPotencyGUI implements ICalculation {
         gui.setJButtonText("Potentiate Matrix");
     }
     @Override
-    public BigDecimal[][] matrixCalculation(BigDecimal[][] matrix, BigDecimal number) {
+    public T[][] matrixCalculation(T[][] matrix, T number) {
         return ArithmeticOperations.matrixPotency(matrix, number);
     }
 }

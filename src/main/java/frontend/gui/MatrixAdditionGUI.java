@@ -11,14 +11,14 @@ import java.math.BigDecimal;
  * @version 1.0
  * @since 1.0 (2022/07/21)
  */
-public class MatrixAdditionGUI implements ICalculation {
+public class MatrixAdditionGUI<T> implements ICalculation<T> {
     public MatrixAdditionGUI() {
         var gui = new TwoMatrixOperationGUI(this);
         gui.setJFrameTitle("Matrix Addition");
         gui.setJButtonText("Add");
     }
     @Override
-    public BigDecimal[][] matrixCalculation(BigDecimal[][] matrix1, BigDecimal[][] matrix2) {
+    public T[][] matrixCalculation(T[][] matrix1, T[][] matrix2) {
         return ArithmeticOperations.matrixAddition(matrix1, matrix2);
     }
 }

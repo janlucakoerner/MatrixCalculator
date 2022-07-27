@@ -5,8 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1939703e-de80-4a8b-b4eb-eb2894aaa097" name="Changes" comment="2022/07/27">
+      <change afterPath="$PROJECT_DIR$/src/main/java/middleware/base/DataType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/base/frame/OpenMatrixGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/base/frame/OpenMatrixGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/base/panel/MatrixPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/base/panel/MatrixPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/base/panel/NumberPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/base/panel/NumberPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/gui/MatrixAdditionGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/gui/MatrixAdditionGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/gui/MatrixInverseMultiplicationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/gui/MatrixInverseMultiplicationGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/gui/MatrixMultiplicationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/gui/MatrixMultiplicationGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/gui/MatrixPotencyGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/gui/MatrixPotencyGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/gui/MatrixSubtractionGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/gui/MatrixSubtractionGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/middleware/ArithmeticOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/middleware/ArithmeticOperations.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/middleware/base/Fraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/middleware/base/Fraction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/middleware/base/ICalculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/middleware/base/ICalculation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/middleware/base/INumberDatatype.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/middleware/base/INumberDatatype.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -147,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658908893020</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="2022/07/27">
+      <created>1658912691346</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1658912691346</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -11,7 +11,7 @@ import java.math.BigDecimal;
  * @version 1.0
  * @since 1.0 (2022/07/22)
  */
-public class MatrixInverseMultiplicationGUI implements ICalculation {
+public class MatrixInverseMultiplicationGUI<T> implements ICalculation<T> {
     public MatrixInverseMultiplicationGUI() {
         var gui = new TwoMatrixOperationGUI(this);
         gui.setJFrameTitle("Matrix Inverse Multiplication");
@@ -19,7 +19,7 @@ public class MatrixInverseMultiplicationGUI implements ICalculation {
     }
 
     @Override
-    public BigDecimal[][] matrixCalculation(BigDecimal[][] matrix1, BigDecimal[][] matrix2) {
+    public T[][] matrixCalculation(T[][] matrix1, T[][] matrix2) {
         return ArithmeticOperations.matrixInverseMultiplication(matrix1, matrix2);
     }
 

@@ -1,27 +1,20 @@
 package middleware.base;
 
-import java.math.BigDecimal;
-
-public interface INumberDatatype {
+/**
+ * This interface INumberDatatype provides arithmetic operations and other operations.
+ *
+ * @author janlucakoerner
+ * @version 1.0
+ * @since 1.0 (2022/07/27)
+ */
+public interface INumberDatatype<T> {
     // methods
-    INumberDatatype add(INumberDatatype augend);
-    INumberDatatype subtract(INumberDatatype subtrahend);
-    INumberDatatype multiply(INumberDatatype multiplicand);
-    INumberDatatype divide(INumberDatatype divisor);
-    INumberDatatype divide(INumberDatatype divisor, int scale, int roundingMode);
-    INumberDatatype abs();
-    boolean equals(INumberDatatype val);
-    int compareTo(INumberDatatype val);
+    T add(T augend);
+    T subtract(T subtrahend);
+    T multiply(T multiplicand);
+    T divide(T divisor);
+    T divide(T divisor, int scale, int roundingMode);
+    T abs();
+    boolean equals(Object val);
     String toString();
-
-    // only for datatype internal usage
-    default BigDecimal getNumerator() {
-        return null;
-    }
-    default BigDecimal getDenominator() {
-        return null;
-    }
-    default INumberDatatype shorten() {
-        return null;
-    }
 }

@@ -1,30 +1,28 @@
 package middleware.base;
 
-import java.math.BigDecimal;
-
 /**
  * @author janlucakoerner
  * @version 1.0
  * @since 1.0 (2022/07/04)
  */
-public interface ICalculation {
-    default BigDecimal[][] matrixCalculation(BigDecimal[][] matrix1, BigDecimal[][] matrix2) {
+public interface ICalculation<T> {
+    default T[][] matrixCalculation(T[][] matrix1, T[][] matrix2) {
         return null;
     }
-    default BigDecimal[][] matrixCalculation(BigDecimal[][] matrix) {
+    default T[][] matrixCalculation(T[][] matrix) {
         return null;
     }
-    default BigDecimal[][] matrixCalculation(BigDecimal[][] matrix, BigDecimal[] vector) {
+    default T[][] matrixCalculation(T[][] matrix, T[] vector) {
         return null;
     }
-    default BigDecimal[] vectorCalculation(BigDecimal[][] matrix) {
+    default T[] vectorCalculation(T[][] matrix) {
         return null;
     }
-    default BigDecimal[] vectorCalculation(BigDecimal[] vector1, BigDecimal[] vector2) {
+    default T[] vectorCalculation(T[] vector1, T[] vector2) {
         return null;
     }
-    default BigDecimal numberCalculation(BigDecimal[][] matrix) { return null; }
-    default BigDecimal[][] matrixCalculation(BigDecimal[][] matrix, BigDecimal number) {
+    default T numberCalculation(T[][] matrix) { return null; }
+    default T[][] matrixCalculation(T[][] matrix, T number) {
         return null;
     }
 }

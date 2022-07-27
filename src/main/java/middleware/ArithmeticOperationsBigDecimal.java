@@ -91,9 +91,9 @@ public abstract class ArithmeticOperationsBigDecimal {
 		for (int i = 0; i < result.length; i++) {
 			for (int j = 0; j < result.length; j++) {
 				if (i == j) {
-					result[j][i] = new BigDecimal(1);
+					result[j][i] = BigDecimal.ONE;
 				} else {
-					result[j][i] = new BigDecimal(0);
+					result[j][i] = BigDecimal.ZERO;
 				}
 			}
 		}

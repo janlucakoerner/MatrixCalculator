@@ -18,6 +18,9 @@ public class Fraction implements INumberDatatype<Fraction>, Comparable<Fraction>
     //------------------------------------------------------------------------------------------------------------------
     public static final Fraction ZERO = new Fraction(BigDecimal.ZERO);
     public static final Fraction ONE = new Fraction(BigDecimal.ONE);
+    public static final Fraction MINUS_ONE = new Fraction(new BigDecimal(-1));
+    public static int NO_ROUNDING = 0;
+    public static int MAX_PRECISION = 0;
     //------------------------------------------------------------------------------------------------------------------
     //  instance variables
     //------------------------------------------------------------------------------------------------------------------
@@ -87,7 +90,10 @@ public class Fraction implements INumberDatatype<Fraction>, Comparable<Fraction>
     }
     @Override
     public String toString() {
-        return numerator.toString() + '/' + denominator.toString();
+        if (denominator.equals(BigDecimal.ONE))
+            return numerator.toString();
+        else
+            return numerator.toString() + '/' + denominator.toString();
     }
     //------------------------------------------------------------------------------------------------------------------
     //  methods: arithmetic operations
@@ -130,5 +136,14 @@ public class Fraction implements INumberDatatype<Fraction>, Comparable<Fraction>
         var numerator = this.numerator.divide(divisor.getDenominator(), scale, roundingMode);
         var denominator = this.denominator.divide(divisor.getNumerator(), scale, roundingMode);
         return new Fraction(numerator, denominator);
+    }
+    @Override
+    public Fraction pow(int exponent) {
+        if (exponent == 0)
+            return Fraction.ONE;
+        else if (exponent > 0)
+            return new Fraction(this.numerator.pow(exponent), this.denominator.pow(exponent));
+        else
+            return null;
     }
 }

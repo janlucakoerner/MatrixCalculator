@@ -17,4 +17,6 @@ public interface INumberDatatype<T> {
     T abs();
     boolean equals(Object val);
     String toString();
+
+    T pow(int exponent);
 }

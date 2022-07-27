@@ -1,4 +1,5 @@
 import frontend.gui.MatrixAdditionGUI;
+import middleware.base.DataType;
 
 /**
  * Main class of the software project MatrixCalculation.
@@ -18,7 +19,7 @@ public class Main {
         frame.setVisible(true);
 
          */
-
+        DataType.current = DataType.FRACTION;
         new MatrixAdditionGUI();
         //new MatrixSubtractionGUI();
         //new MatrixMultiplicationGUI();

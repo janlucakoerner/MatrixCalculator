@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1939703e-de80-4a8b-b4eb-eb2894aaa097" name="Changes" comment="2022/07/27" />
+    <list default="true" id="1939703e-de80-4a8b-b4eb-eb2894aaa097" name="Changes" comment="2022/07/28">
+      <change afterPath="$PROJECT_DIR$/src/test/java/MainTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/backend/ParserBigDecimalTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/backend/ParserFractionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/base/panel/MatrixPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/base/panel/MatrixPanel.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +24,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -33,18 +43,35 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="backend.ParserFraction" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\janlucakoerner\IdeaProjects\MatrixCalculator\src\test" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="backend.ParserFraction" />
+      <recent name="Main" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="backend" />
+      <recent name="" />
+    </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn clean install" />
+      <command value="mvn clean test" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.MainTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="MatrixCalculator" />
@@ -52,14 +79,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MatrixCalculator-1.0-SNAPSHOT.jar" type="JarApplication" temporary="true">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/target/MatrixCalculator-1.0-SNAPSHOT.jar" />
-      <method v="2" />
+    <configuration name="MainTest" type="JUnit" factoryName="JUnit">
+      <module name="MatrixCalculator" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MainTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.MainTest" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="JAR Application.MatrixCalculator-1.0-SNAPSHOT.jar" />
       </list>
     </recent_temporary>
   </component>
@@ -150,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658953427754</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="2022/07/28">
+      <created>1659022828920</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1659022828920</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,7 +216,8 @@
     <MESSAGE value="2022/07/21" />
     <MESSAGE value="2022/07/22" />
     <MESSAGE value="2022/07/27" />
-    <option name="LAST_COMMIT_MESSAGE" value="2022/07/27" />
+    <MESSAGE value="2022/07/28" />
+    <option name="LAST_COMMIT_MESSAGE" value="2022/07/28" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

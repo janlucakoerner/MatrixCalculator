@@ -21,6 +21,7 @@ Possible arithmetic operations of the matrix and vector calculator are:
 * Matrix inversion,
 * Matrix inverse multiplication,
 * Matrix potency,
+* Matrix determinant,
 * Solve of linear system of equations,
 * Vector addition,
 * Vector subtraction and

@@ -1,4 +1,4 @@
-import frontend.gui.MatrixAdditionGUI;
+import frontend.gui.*;
 import middleware.base.DataType;
 
 /**
@@ -22,10 +22,10 @@ public class Main {
         DataType.current = DataType.FRACTION;
         new MatrixAdditionGUI();
         //new MatrixSubtractionGUI();
+        //new MatrixInversionGUI();
         //new MatrixMultiplicationGUI();
         //new MatrixInverseMultiplicationGUI();
-        //new MatrixDeterminantGUI();
-        //new MatrixInversionGUI();
         //new MatrixPotencyGUI();
+        //new MatrixDeterminantGUI();
     }
 }

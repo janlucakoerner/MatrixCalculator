@@ -81,9 +81,10 @@ public class MatrixPanel extends JPanel {
                     try {
                         var rowCount = Integer.parseInt(textField_rowCount.getText());
                         var columnCount = Integer.parseInt(textField_columnCount.getText());
-                        if (rowCount <= 1 || columnCount <= 1) {
+                        if (rowCount <= 1 && columnCount <= 1) {
                             JOptionPane.showMessageDialog(null, "Row or column count is not a valid number",
                                     "Parse Error", JOptionPane.ERROR_MESSAGE, null);
+                            return;
                         }
                         frame.setVisible(false);
 

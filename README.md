@@ -51,7 +51,7 @@ For higher precision this software defines a new datatype named `Fraction` which
 
 ### Sourcecode structure
 The sourcecode of the software is completely written in Java. Beside the main class there are three packages named `backend`,
-`middleware` and `frontend`. The `backend` package provides parser function to read matrices from csv files or inline fields.
+`middleware` and `frontend`. The `backend` package provides parser functions to read matrices from csv files or inline fields.
 The `middleware` package provides all arithmetic operations on one side for `BigDecimal` datatype and on the other side for
 `Fraction` datatype. This package is divided in another package named `base`, which contains the implementation of the
 `Fraction` datatype and all interfaces which are necessary for the `Fraction` datatype. The last package is the `frontend`

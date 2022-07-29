@@ -1,5 +1,4 @@
 import frontend.gui.*;
-import middleware.base.DataType;
 
 /**
  * Main class of the software project MatrixCalculation.
@@ -10,23 +9,6 @@ import middleware.base.DataType;
  */
 public class Main {
     public static void main(String[] args) {
-        /*
-        var frame = new JFrame();
-        frame.add(new MatrixPanel(frame));
-        frame.pack();
-        frame.setMinimumSize(new Dimension(frame.getWidth(), frame.getHeight()));
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-
-         */
-        DataType.current = DataType.FRACTION;
         MainGUI.instance.setVisible(true);
-        //new MatrixAdditionGUI();
-        //new MatrixSubtractionGUI();
-        //new MatrixInversionGUI();
-        //new MatrixMultiplicationGUI();
-        //new MatrixInverseMultiplicationGUI();
-        //new MatrixPotencyGUI();
-        //new MatrixDeterminantGUI();
     }
 }

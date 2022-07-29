@@ -8,6 +8,7 @@ import java.awt.*;
 import java.math.BigDecimal;
 
 /**
+ * This class provides a method for opening vectors in a gui.
  * @author janlucakoerner
  * @version 1.0
  * @since 1.0 (2022/07/27)
@@ -18,7 +19,7 @@ public class OpenVectorGUI extends JFrame {
      * The JTextFields contains the value of each cell.
      * All Components are not editable.
      * @param parent The parent Frame for hiding and showing.
-     * @param vector The multidimensional style of a vector.
+     * @param vector The one dimensional style of a vector.
      */
     public OpenVectorGUI(JFrame parent, Object[] vector) {
         if (vector == null) {

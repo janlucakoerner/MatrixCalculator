@@ -5,20 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1939703e-de80-4a8b-b4eb-eb2894aaa097" name="Changes" comment="2022/07/29">
-      <change afterPath="$PROJECT_DIR$/src/main/java/frontend/base/frame/MatrixVectorToVectorOperationGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/frontend/base/frame/VectorVectorToNumberOperationGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/frontend/base/frame/VectorVectorToVectorOperationGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/frontend/gui/LinearSystemOfEquationGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/frontend/gui/VectorAdditionGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/frontend/gui/VectorScalarMultiplicationGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/frontend/gui/VectorSubtractionGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/base/frame/MatrixVectorToVectorOperation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/base/panel/NumberPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/base/panel/NumberPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/gui/MainGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/gui/MainGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/middleware/ArithmeticOperationsBigDecimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/middleware/ArithmeticOperationsBigDecimal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/middleware/ArithmeticOperationsFraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/middleware/ArithmeticOperationsFraction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/middleware/base/ICalculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/middleware/base/ICalculation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/ParserBigDecimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/ParserBigDecimal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/ParserFraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/ParserFraction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/base/frame/MatrixMatrixToMatrixOperationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/base/frame/MatrixMatrixToMatrixOperationGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/base/frame/MatrixNumberToMatrixOperationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/base/frame/MatrixNumberToMatrixOperationGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/base/frame/MatrixToMatrixOperationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/base/frame/MatrixToMatrixOperationGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/base/frame/MatrixToNumberOperationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/base/frame/MatrixToNumberOperationGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/base/frame/MatrixVectorToVectorOperationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/base/frame/MatrixVectorToVectorOperationGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/base/frame/OpenMatrixGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/base/frame/OpenMatrixGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/base/frame/OpenVectorGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/base/frame/OpenVectorGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/base/frame/VectorVectorToNumberOperationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/base/frame/VectorVectorToNumberOperationGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/base/frame/VectorVectorToVectorOperationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/base/frame/VectorVectorToVectorOperationGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659110733309</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="2022/07/29">
+      <created>1659113418038</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1659113418038</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

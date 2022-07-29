@@ -24,6 +24,9 @@ public class VectorPanel extends JPanel {
     private final JLabel label;
     private final JTextField textField_inlineMatrix;
     private Object[] vector;
+    /**
+     * Constructor which creates a JPanel customized for vectors.
+     */
     public VectorPanel(JFrame parent) {
         label = new JLabel();
         textField_inlineMatrix = new JTextField();
@@ -256,26 +259,46 @@ public class VectorPanel extends JPanel {
         gbc.gridx = 4;
         add(button_loadMatrixCSV, gbc);
     }
-
+    /**
+     * This method sets the inline textfield editable or not.
+     * @param editable Boolean value which represent the editable state.
+     */
     public void setEditable(boolean editable) {
         textField_inlineMatrix.setEditable(editable);
     }
-
+    /**
+     * This method sets the text of the JLabel.
+     * @param text The text which should be displayed in the JLabel.
+     */
     public void setText(String text) {
         label.setText(text);
     }
-
+    /**
+     * This method returns the inline vector of the textfield.
+     * @return The inline vector of the textfield.
+     */
     public String getInline() {
         return textField_inlineMatrix.getText();
     }
-
+    /**
+     * This method updates the inline textfield by BigDecimal values.
+     * @param vector The vector as a BigDecimal array
+     */
     public void updateInline(BigDecimal[] vector) {
         textField_inlineMatrix.setText(ParserBigDecimal.vectorToString(vector));
     }
+    /**
+     * This method updates the inline textfield by Fraction values.
+     * @param vector The vector as a Fraction array
+     */
     public void updateInline(Fraction[] vector) {
         textField_inlineMatrix.setText(ParserFraction.vectorToString(vector));
     }
-
+    /**
+     * This method loads the vector from a csv file.
+     * @param file The csv file selected by the JFileChooser
+     * @throws IOException Will be thrown if file is not readable.
+     */
     private void loadMatrixCSV(File file) throws IOException {
         var reader = new BufferedReader(new FileReader(file));
         var lines = reader.lines().toList();

@@ -12,6 +12,12 @@ import javax.swing.*;
  * @since 1.0 (2022/07/27)
  */
 public class ParserFraction {
+    /**
+     * This method parses a matrix to string. It needs the methods
+     * toString(Fraction[]) and insertLinebreak(String[]) in order to do that.
+     * @param matrix A matrix.
+     * @return The given matrix as String.
+     */
     public static String toString(Fraction[][] matrix) {
         if (matrix == null) {
             return "";
@@ -22,6 +28,11 @@ public class ParserFraction {
         }
         return insertLinebreak(lines);
     }
+    /**
+     * This method inserts between two fraction values a semicolon.
+     * @param row An array with BigDecimal values.
+     * @return The changed values as String.
+     */
     private static String toString(Fraction[] row) {
         var sb = new StringBuilder();
         for (int i = 0; i < row.length; i++) {
@@ -33,6 +44,11 @@ public class ParserFraction {
         }
         return sb.toString();
     }
+    /**
+     * This method inserts between every line an escaped linebreak.
+     * @param lines An array with String values
+     * @return The changed lines as String
+     */
     private static String insertLinebreak(String[] lines) {
         var sb = new StringBuilder();
         for (int i = 0; i < lines.length; i++) {
@@ -44,6 +60,11 @@ public class ParserFraction {
         }
         return sb.toString();
     }
+    /**
+     * This method parse a multidimensional array matrix from the inline style.
+     * @param matrix The inline style of a matrix
+     * @return The multidimensional style of a matrix
+     */
     public static Fraction[][] getMatrixFromInline(String matrix) {
         if (!matrix.equals("")) {
             var lines = matrix.split("\\\\n");

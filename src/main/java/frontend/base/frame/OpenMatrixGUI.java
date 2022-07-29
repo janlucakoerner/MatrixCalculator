@@ -1,16 +1,14 @@
 package frontend.base.frame;
 
-import frontend.gui.MainGUI;
 import middleware.base.DataType;
 import middleware.base.Fraction;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.math.BigDecimal;
 
 /**
+ * This class provides a method for opening matrices in a gui.
  * @author janlucakoerner
  * @version 1.0
  * @since 1.0 (2022/07/27)

@@ -15,9 +15,17 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.math.BigDecimal;
 
+/**
+ * @author janlucakoerner
+ * @version 1.0
+ * @since 1.0 (2022/07/29)
+ */
 public class MatrixVectorToVectorOperationGUI extends JFrame {
     private final JButton button = new JButton();
-
+    /**
+     * Constructor creating the JFrame gui.
+     * @param calculation The ICalculation interface.
+     */
     public MatrixVectorToVectorOperationGUI(ICalculation calculation) {
         var matrixPanel = new MatrixPanel(this);
         var vectorPanel = new VectorPanel(this);
@@ -58,11 +66,17 @@ public class MatrixVectorToVectorOperationGUI extends JFrame {
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         setVisible(true);
     }
-
+    /**
+     * Sets the title of the JFrame.
+     * @param jFrameTitle The JFrame title.
+     */
     public void setJFrameTitle(String jFrameTitle) {
         setTitle(jFrameTitle);
     }
-
+    /**
+     * Sets the title of the "Calculate" JButton.
+     * @param jButtonText The JButton title.
+     */
     public void setJButtonText(String jButtonText) {
         button.setText(jButtonText);
     }

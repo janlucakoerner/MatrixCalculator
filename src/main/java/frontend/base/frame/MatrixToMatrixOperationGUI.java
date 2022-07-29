@@ -15,13 +15,18 @@ import java.awt.event.WindowEvent;
 import java.math.BigDecimal;
 
 /**
+ * This class provides one matrix field and a
+ * result matrix field for arithmetic operations.
  * @author janlucakoerner
  * @version 1.0
  * @since 1.0 (2022/07/27)
  */
 public class MatrixToMatrixOperationGUI extends JFrame {
     private final JButton button = new JButton();
-
+    /**
+     * Constructor creating the JFrame gui.
+     * @param calculation The ICalculation interface.
+     */
     public MatrixToMatrixOperationGUI(ICalculation calculation) {
         var matrixPanel = new MatrixPanel(this);
         var matrixPanelResult = new MatrixPanel(this);
@@ -57,9 +62,17 @@ public class MatrixToMatrixOperationGUI extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
     }
+    /**
+     * Sets the title of the JFrame.
+     * @param jFrameTitle The JFrame title.
+     */
     public void setJFrameTitle(String jFrameTitle) {
         setTitle(jFrameTitle);
     }
+    /**
+     * Sets the title of the "Calculate" JButton.
+     * @param jButtonText The JButton title.
+     */
     public void setJButtonText(String jButtonText) {
         button.setText(jButtonText);
     }

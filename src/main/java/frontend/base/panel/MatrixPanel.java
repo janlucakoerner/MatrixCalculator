@@ -24,6 +24,10 @@ public class MatrixPanel extends JPanel {
     private final JLabel label;
     private final JTextField textField_inlineMatrix;
     private Object[][] matrix;
+    /**
+     * Constructor which creates a JPanel customized for matrices.
+     * @param parent The parent JFrame.
+     */
     public MatrixPanel(JFrame parent) {
         label = new JLabel();
         textField_inlineMatrix = new JTextField();
@@ -275,26 +279,46 @@ public class MatrixPanel extends JPanel {
         gbc.gridx = 4;
         add(button_loadMatrixCSV, gbc);
     }
-
+    /**
+     * This method sets the inline textfield editable or not.
+     * @param editable Boolean value which represent the editable state.
+     */
     public void setEditable(boolean editable) {
         textField_inlineMatrix.setEditable(editable);
     }
-
+    /**
+     * This method sets the text of the JLabel.
+     * @param text The text which should be displayed in the JLabel.
+     */
     public void setText(String text) {
         label.setText(text);
     }
-
+    /**
+     * This method returns the inline matrix of the textfield.
+     * @return The inline matrix of the textfield.
+     */
     public String getInline() {
         return textField_inlineMatrix.getText();
     }
-
+    /**
+     * This method updates the inline textfield by BigDecimal values.
+     * @param matrix The matrix as a BigDecimal array
+     */
     public void updateInline(BigDecimal[][] matrix) {
         textField_inlineMatrix.setText(ParserBigDecimal.toString(matrix));
     }
+    /**
+     * This method updates the inline textfield by Fraction values.
+     * @param matrix The matrix as a Fraction array
+     */
     public void updateInline(Fraction[][] matrix) {
         textField_inlineMatrix.setText(ParserFraction.toString(matrix));
     }
-
+    /**
+     * This method loads the matrix from a csv file.
+     * @param file The csv file selected by the JFileChooser
+     * @throws IOException Will be thrown if file is not readable.
+     */
     private void loadMatrixCSV(File file) throws IOException {
         var reader = new BufferedReader(new FileReader(file));
         var lines = reader.lines().toList();

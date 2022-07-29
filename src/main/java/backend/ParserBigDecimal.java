@@ -30,7 +30,7 @@ public class ParserBigDecimal {
     }
 
     /**
-     * This method inserts between to BigDecimal values a semicolon.
+     * This method inserts between two BigDecimal values a semicolon.
      * @param row An array with BigDecimal values.
      * @return The changed values as String.
      */
@@ -62,9 +62,6 @@ public class ParserBigDecimal {
         }
         return sb.toString();
     }
-
-    //------------------------------------------------------------------------------------------------------------------
-
     /**
      * This method parse a multidimensional array matrix from the inline style.
      * @param matrix The inline style of a matrix

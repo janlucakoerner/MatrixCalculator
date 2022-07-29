@@ -3,24 +3,19 @@ package middleware;
 import javax.swing.*;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-
 /**
- * This class <b>Arithmetic_operations_Ts</b> contains all executable arithmetic operations.
- * They should <b>only</b> be used outside this class, also it cannot create instances of the class because this class possesses these following modifiers: {@code abstract} .<br>
- * All methods of this class possess these following modifiers: {@code static} .
+ * This class provides matrix and vector operations for the datatype Fraction.
  * @author janlucakoerner
  * @version 1.0
- * @since 1.0 (2022/07/26)
+ * @since 1.0 (2022/07/27)
  */
 @SuppressWarnings("BigDecimalMethodWithoutRoundingCalled")
 public abstract class ArithmeticOperationsBigDecimal {
 	/**
-	 * This method <b>matrixMultiplication</b> multiplies two matrices:<br>
-	 * &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {@code matricesA} x {@code matricesB} = {@code result}
-	 * @param matricesA 	of data type {@code T[][]}
-	 * @param matricesB 	of data type {@code T[][]} <br>
-	 * 						Both parameters should contain a matrix.						
-	 * @return <b>result</b>	of data type {@code T[][]} delivers a matrix.
+	 * This method multiplies two matrices.
+	 * @param matricesA The first matrix.
+	 * @param matricesB The second matrix.
+	 * @return The multiplication of both matrices.
 	 */
 	public static BigDecimal[][] matrixMultiplication(BigDecimal[][] matricesA, BigDecimal[][] matricesB) {
 		if (matricesA == null || matricesB == null) {
@@ -48,16 +43,10 @@ public abstract class ArithmeticOperationsBigDecimal {
 		return result;
 	}
 	/**
-	 * This method <b>matrixPotency</b> exponentiate {@code pMatrix} by {@code pExponent}.<br>
-	 * - If {@code pExponent} is greater than <b>1</b> it calculates the potency of {@code pMatrix} by {@code pExponent}.<br>
-	 * - If {@code pExponent} is equal than <b>1</b>  the method delivers {@code pMatrix}.<br>
-	 * - If {@code pExponent} is equal than <b>O</b> the method delivers an identity matrix.<br>
-	 * - If {@code pExponent} is equal than <b>-1</b> the method delivers the inverse of {@code pMatrix}.<br>
-	 * - If {@code pExponent} is less than <b>-1</b> it first calculates the potency of {@code pMatrix} by the absolute value of {@code pExponent} 
-	 * and second it calculates the inverse of this potency.<br>
-	 *
-	 * @param pMatrix of data type {@code T[][]} should contain a square matrix 
-	 * @param pExponent of data type {@code Integer} should contain an exponent
+	 * This method calculates the potency of one matrix with an Integer exponent.
+	 * @param pMatrix The matrix.
+	 * @param pExponent The exponent.
+	 * @return The Potency of the matrix with the exponent.
 	 */
 	public static BigDecimal[][] matrixPotency(BigDecimal[][] pMatrix, BigDecimal pExponent) {
 		if (pMatrix.length != pMatrix[0].length) {
@@ -82,9 +71,9 @@ public abstract class ArithmeticOperationsBigDecimal {
 		}
 	}
 	/**
-	 * This method <b>getIdentityMatrix</b> creates an identity matrix of the dimension {@code pDimension}
-	 * @param pDimension of data type {@code Integer} should contain the dimension of the matrix
-	 * @return <b>result</b> of data type {@code T[][]} delivers a matrix
+	 * This method creates an identity matrix of the given dimension.
+	 * @param pDimension The dimension.
+	 * @return The identity matrix.
 	 */
 	private static BigDecimal[][] getIdentityMatrix(int pDimension) {
 		BigDecimal[][] result = new BigDecimal[pDimension][pDimension];
@@ -100,10 +89,9 @@ public abstract class ArithmeticOperationsBigDecimal {
 		return result;
 	}
 	/**
-	 * This method <b>matrixInversion</b> calculates the inverse of {@code pMatrix}.<br>
-	 *
-	 * @param pMatrix of data type {@code T[][]} should contain a (not singular) square matrix.
-	 * @return <b>inverse</b> of data type {@code T[][]} delivers a matrix.
+	 * This method inverse the given matrix.
+	 * @param pMatrix The matrix.
+	 * @return The inverse of the matrix.
 	 */
 	public static BigDecimal[][] matrixInversion(BigDecimal[][] pMatrix) {
 		if (pMatrix == null) {
@@ -147,14 +135,13 @@ public abstract class ArithmeticOperationsBigDecimal {
         return inverse;
     }
 	/**
-	 * This method <b>minor</b> calculates the minor of {@code pMatrix}.<br>
-	 *
-	 * @param pMatrix of data type {@code T[][]} should contain a square matrix.
-	 * @param pRow of data type {@code int} should contain a row
-	 * @param pColumn of data type {@code int} should contain a column
-	 * @return <b>minor</b> of data type {@code T[][]} delivers a minor square matrix .
+	 * This method calculates the minor of the given matrix.
+	 * @param pMatrix The matrix.
+	 * @param pRow The row.
+	 * @param pColumn The column.
+	 * @return The minor of the matrix
 	 */
-	private static BigDecimal[][] minor(BigDecimal[][] pMatrix, int pRow, int pColumn) {
+    private static BigDecimal[][] minor(BigDecimal[][] pMatrix, int pRow, int pColumn) {
 		BigDecimal[][] minor = new BigDecimal[pMatrix.length - 1][pMatrix.length - 1];
 		for (int i = 0; i < pMatrix.length; i++)
 			for (int j = 0; i != pRow && j < pMatrix[i].length; j++)
@@ -162,6 +149,13 @@ public abstract class ArithmeticOperationsBigDecimal {
 					minor[i < pRow ? i : i - 1][j < pColumn ? j : j - 1] = pMatrix[i][j];
 		return minor;
 	}
+	/**
+	 * This method retrieves the determinant of the matrix.
+	 * @param pMatrix The matrix.
+	 * @param current_dimension The current dimension of the matrix.
+	 * @param start_dimension The start dimension of the matrix.
+	 * @return The determinant of the matrix.
+	 */
 	public static BigDecimal determinant(BigDecimal[][] pMatrix, int current_dimension, int start_dimension) {
 		if (pMatrix == null) {
 			JOptionPane.showMessageDialog(null, "Matrices equals null!",
@@ -186,8 +180,14 @@ public abstract class ArithmeticOperationsBigDecimal {
 		}
 		return result;
     }
-
-	private static void cofactor(BigDecimal[][] pMatrix, BigDecimal[][] cofactors, int y, int dimension) {
+	/**
+	 * This method calculates the cofactor of the matrix.
+	 * @param pMatrix The matrix.
+	 * @param cofactors The cofactors.
+	 * @param y The value.
+	 * @param dimension The dimension.
+	 */
+    private static void cofactor(BigDecimal[][] pMatrix, BigDecimal[][] cofactors, int y, int dimension) {
 		int i = 0, j = 0;
 		for (int row = 0; row < dimension; row++) {
 			for (int column = 0; column < dimension; column++) {
@@ -202,13 +202,12 @@ public abstract class ArithmeticOperationsBigDecimal {
 		}
     }
 	/**
-	 * This method <b>matrixInverseMultiplication</b> multiplies {@code matricesA} with the inverse of {@code matricesB}.<br>
-	 *
-	 * @param matricesA of data type {@code T[][]} should contain a square matrix.
-	 * @param matricesB of data type {@code T[][]} should contain a square matrix.
-	 * @return <b>result</b> of data type {@code T[][]} delivers a square matrix.
+	 * This method calculates the inverse multiplication of both matrices.
+	 * @param matricesA The first matrix.
+	 * @param matricesB The second matrix.
+	 * @return The inverse multiplication of both matrices.
 	 */
-	public static BigDecimal[][] matrixInverseMultiplication(BigDecimal[][] matricesA, BigDecimal[][] matricesB) {
+    public static BigDecimal[][] matrixInverseMultiplication(BigDecimal[][] matricesA, BigDecimal[][] matricesB) {
 		if (matricesA == null || matricesB == null) {
 			JOptionPane.showMessageDialog(null, "Matrices equals null!",
 					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
@@ -221,11 +220,10 @@ public abstract class ArithmeticOperationsBigDecimal {
 		return matrixMultiplication(matricesA, matrixInversion(matricesB));
 	}
 	/**
-	 * This method <b>matrixSubtraction</b> subtracts {@code matricesA} with {@code matricesB}.<br>
-	 * 
-	 * @param matricesA of data type {@code T[][]} should contain a matrix.
-	 * @param matricesB of data type {@code T[][]} should contain a matrix.
-	 * @return <b>result</b> of data type {@code T[][]} delivers a matrix.
+	 * This method subtracts two matrices.
+	 * @param matricesA The first matrix.
+	 * @param matricesB The second matrix.
+	 * @return The subtraction of both matrices.
 	 */
 	public static BigDecimal[][] matrixSubtraction(BigDecimal[][] matricesA, BigDecimal[][] matricesB) {
 		if (matricesA == null || matricesB == null) {
@@ -246,11 +244,10 @@ public abstract class ArithmeticOperationsBigDecimal {
 		return result;
 	}
 	/**
-	 * This method <b>matrixAddition</b> adds {@code matricesA} with {@code matricesB}.<br>
-	 * 
-	 * @param matricesA of data type {@code T[][]} should contain a matrix.
-	 * @param matricesB of data type {@code T[][]} should contain a matrix.
-	 * @return <b>result</b> of data type {@code T[][]} delivers a matrix.
+	 * This method adds two matrices.
+	 * @param matricesA The first matrix.
+	 * @param matricesB The second matrix.
+	 * @return The addition of both matrices.
 	 */
 	public static BigDecimal[][] matrixAddition(BigDecimal[][] matricesA, BigDecimal[][] matricesB) {
 		if (matricesA == null || matricesB == null) {
@@ -271,32 +268,11 @@ public abstract class ArithmeticOperationsBigDecimal {
 		return result;
 	}
 	/**
-	 * This method <b>solveLinearSystemOfEquations</b> solves a linear system of equations with a square matrix {@code pMatrix} and a vector {@code pVector}.<br>
-	 * First it calculates the inverse of {@code pMatrix}. Then it multiply the inverse of {@code pMatrix} with the vector {@code pVector}.<br>
-	 *
-	 * @param pMatrix of data type {@code T[][]} should contain a square matrix.
-	 * @param pVector of data type {@code T[]} should contain a vector.
-	 * @return <b>result</b> of data type {@code T[]} delivers a vector.
+	 * This method adds two vectors.
+	 * @param vector1 The first vector.
+	 * @param vector2 The second vector.
+	 * @return The addition of both vectors.
 	 */
-	public static BigDecimal[] solveLinearSystemOfEquations(BigDecimal[][] pMatrix, BigDecimal[] pVector) {
-		BigDecimal[] result = null;
-		if (pMatrix.length == pVector.length) {
-			result = new BigDecimal[pVector.length];
-			BigDecimal[][] inverse = matrixInversion(pMatrix);
-			if (inverse == null)  {
-				JOptionPane.showMessageDialog(null, "Matrix could not be inverted!",
-						"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
-				return null;
-			}
-			for (int i = 0; i < result.length; i++) {
-				for (int j = 0; j < result.length; j++) {
-					result[i] = result[i].add(inverse[i][j].multiply(pVector[j]));
-				}
-			}
-		}
-		return result;
-	}
-
 	public static BigDecimal[] vectorAddition(BigDecimal[] vector1, BigDecimal[] vector2) {
 		if (vector1.length != vector2.length) {
 			JOptionPane.showMessageDialog(null, "Vector dimension is different!",
@@ -309,7 +285,12 @@ public abstract class ArithmeticOperationsBigDecimal {
 		}
 		return result;
 	}
-
+	/**
+	 * This method subtracts two vectors.
+	 * @param vector1 The first vector.
+	 * @param vector2 The second vector.
+	 * @return The subtraction of both vectors.
+	 */
 	public static BigDecimal[] vectorSubtraction(BigDecimal[] vector1, BigDecimal[] vector2) {
 		if (vector1.length != vector2.length) {
 			JOptionPane.showMessageDialog(null, "Vector dimension is different!",
@@ -322,7 +303,12 @@ public abstract class ArithmeticOperationsBigDecimal {
 		}
 		return result;
 	}
-
+	/**
+	 * This method retrieves the scalar multiplication of two vectors.
+	 * @param vector1 The first vector.
+	 * @param vector2 The second vector.
+	 * @return The scalar multiplication of both vectors.
+	 */
 	public static BigDecimal vectorScalarMultiplication(BigDecimal[] vector1, BigDecimal[] vector2) {
 		if (vector1.length != vector2.length) {
 			JOptionPane.showMessageDialog(null, "Vector dimension is different!",

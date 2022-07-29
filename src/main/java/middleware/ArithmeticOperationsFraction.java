@@ -6,11 +6,18 @@ import javax.swing.*;
 import java.util.Objects;
 
 /**
+ * This class provides matrix and vector operations for the datatype Fraction.
  * @author janlucakoerner
  * @version 1.0
  * @since 1.0 (2022/07/27)
  */
 public abstract class ArithmeticOperationsFraction {
+    /**
+     * This method multiplies two matrices.
+     * @param matricesA The first matrix.
+     * @param matricesB The second matrix.
+     * @return The multiplication of both matrices.
+     */
     public static Fraction[][] matrixMultiplication(Fraction[][] matricesA, Fraction[][] matricesB) {
         if (matricesA == null || matricesB == null) {
             JOptionPane.showMessageDialog(null, "Matrices equals null!",
@@ -36,6 +43,12 @@ public abstract class ArithmeticOperationsFraction {
         }
         return result;
     }
+    /**
+     * This method calculates the potency of one matrix with an Integer exponent.
+     * @param pMatrix The matrix.
+     * @param pExponent The exponent.
+     * @return The Potency of the matrix with the exponent.
+     */
     public static Fraction[][] matrixPotency(Fraction[][] pMatrix, Fraction pExponent) {
         if (pMatrix.length != pMatrix[0].length) {
             JOptionPane.showMessageDialog(null, "Matrix must be a square matrix!",
@@ -58,6 +71,11 @@ public abstract class ArithmeticOperationsFraction {
             return matrixInversion(matrixPotency(pMatrix, pExponent.abs()));
         }
     }
+    /**
+     * This method creates an identity matrix of the given dimension.
+     * @param pDimension The dimension.
+     * @return The identity matrix.
+     */
     private static Fraction[][] getIdentityMatrix(int pDimension) {
         Fraction[][] result = new Fraction[pDimension][pDimension];
         for (int i = 0; i < result.length; i++) {
@@ -71,6 +89,11 @@ public abstract class ArithmeticOperationsFraction {
         }
         return result;
     }
+    /**
+     * This method inverse the given matrix.
+     * @param pMatrix The matrix.
+     * @return The inverse of the matrix.
+     */
     public static Fraction[][] matrixInversion(Fraction[][] pMatrix) {
         if (pMatrix == null) {
             JOptionPane.showMessageDialog(null, "Matrices equals null!",
@@ -114,6 +137,13 @@ public abstract class ArithmeticOperationsFraction {
         }
         return inverse;
     }
+    /**
+     * This method calculates the minor of the given matrix.
+     * @param pMatrix The matrix.
+     * @param pRow The row.
+     * @param pColumn The column.
+     * @return The minor of the matrix
+     */
     private static Fraction[][] minor(Fraction[][] pMatrix, int pRow, int pColumn) {
         Fraction[][] minor = new Fraction[pMatrix.length - 1][pMatrix.length - 1];
         for (int i = 0; i < pMatrix.length; i++)
@@ -122,6 +152,13 @@ public abstract class ArithmeticOperationsFraction {
                     minor[i < pRow ? i : i - 1][j < pColumn ? j : j - 1] = pMatrix[i][j];
         return minor;
     }
+    /**
+     * This method retrieves the determinant of the matrix.
+     * @param pMatrix The matrix.
+     * @param current_dimension The current dimension of the matrix.
+     * @param start_dimension The start dimension of the matrix.
+     * @return The determinant of the matrix.
+     */
     public static Fraction determinant(Fraction[][] pMatrix, int current_dimension, int start_dimension) {
         if (pMatrix == null) {
             JOptionPane.showMessageDialog(null, "Matrices equals null!",
@@ -146,6 +183,13 @@ public abstract class ArithmeticOperationsFraction {
         }
         return result;
     }
+    /**
+     * This method calculates the cofactor of the matrix.
+     * @param pMatrix The matrix.
+     * @param cofactors The cofactors.
+     * @param y The value.
+     * @param dimension The dimension.
+     */
     private static void cofactor(Fraction[][] pMatrix, Fraction[][] cofactors, int y, int dimension) {
         int i = 0, j = 0;
         for (int row = 0; row < dimension; row++) {
@@ -160,6 +204,12 @@ public abstract class ArithmeticOperationsFraction {
             }
         }
     }
+    /**
+     * This method calculates the inverse multiplication of both matrices.
+     * @param matricesA The first matrix.
+     * @param matricesB The second matrix.
+     * @return The inverse multiplication of both matrices.
+     */
     public static Fraction[][] matrixInverseMultiplication(Fraction[][] matricesA, Fraction[][] matricesB) {
         if (matricesA == null || matricesB == null) {
             JOptionPane.showMessageDialog(null, "Matrices equals null!",
@@ -172,6 +222,12 @@ public abstract class ArithmeticOperationsFraction {
         }
         return matrixMultiplication(matricesA, matrixInversion(matricesB));
     }
+    /**
+     * This method subtracts two matrices.
+     * @param matricesA The first matrix.
+     * @param matricesB The second matrix.
+     * @return The subtraction of both matrices.
+     */
     public static Fraction[][] matrixSubtraction(Fraction[][] matricesA, Fraction[][] matricesB) {
         if (matricesA == null || matricesB == null) {
             JOptionPane.showMessageDialog(null, "Matrices equals null!",
@@ -190,6 +246,12 @@ public abstract class ArithmeticOperationsFraction {
         }
         return result;
     }
+    /**
+     * This method adds two matrices.
+     * @param matricesA The first matrix.
+     * @param matricesB The second matrix.
+     * @return The addition of both matrices.
+     */
     public static Fraction[][] matrixAddition(Fraction[][] matricesA, Fraction[][] matricesB) {
         if (matricesA == null || matricesB == null) {
             JOptionPane.showMessageDialog(null, "Matrices equals null!",
@@ -208,24 +270,12 @@ public abstract class ArithmeticOperationsFraction {
         }
         return result;
     }
-    public static Fraction[] solveLinearSystemOfEquations(Fraction[][] pMatrix, Fraction[] pVector) {
-        Fraction[] result = null;
-        if (pMatrix.length == pVector.length) {
-            result = new Fraction[pVector.length];
-            Fraction[][] inverse = matrixInversion(pMatrix);
-            if (inverse == null)  {
-                JOptionPane.showMessageDialog(null, "Matrix could not be inverted!",
-                        "Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
-                return null;
-            }
-            for (int i = 0; i < result.length; i++) {
-                for (int j = 0; j < result.length; j++) {
-                    result[i] = result[i].add(inverse[i][j].multiply(pVector[j]));
-                }
-            }
-        }
-        return result;
-    }
+    /**
+     * This method adds two vectors.
+     * @param vector1 The first vector.
+     * @param vector2 The second vector.
+     * @return The addition of both vectors.
+     */
     public static Fraction[] vectorAddition(Fraction[] vector1, Fraction[] vector2) {
         if (vector1.length != vector2.length) {
             JOptionPane.showMessageDialog(null, "Vector dimension is different!",
@@ -238,6 +288,12 @@ public abstract class ArithmeticOperationsFraction {
         }
         return result;
     }
+    /**
+     * This method subtracts two vectors.
+     * @param vector1 The first vector.
+     * @param vector2 The second vector.
+     * @return The subtraction of both vectors.
+     */
     public static Fraction[] vectorSubtraction(Fraction[] vector1, Fraction[] vector2) {
         if (vector1.length != vector2.length) {
             JOptionPane.showMessageDialog(null, "Vector dimension is different!",
@@ -250,6 +306,12 @@ public abstract class ArithmeticOperationsFraction {
         }
         return result;
     }
+    /**
+     * This method retrieves the scalar multiplication of two vectors.
+     * @param vector1 The first vector.
+     * @param vector2 The second vector.
+     * @return The scalar multiplication of both vectors.
+     */
     public static Fraction vectorScalarMultiplication(Fraction[] vector1, Fraction[] vector2) {
         if (vector1.length != vector2.length) {
             JOptionPane.showMessageDialog(null, "Vector dimension is different!",

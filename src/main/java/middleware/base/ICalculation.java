@@ -1,6 +1,8 @@
 package middleware.base;
 
 /**
+ * This interface provides some methods which are
+ * the interfaces between GUI and arithmetic operation.
  * @author janlucakoerner
  * @version 1.0
  * @since 1.0 (2022/07/04)

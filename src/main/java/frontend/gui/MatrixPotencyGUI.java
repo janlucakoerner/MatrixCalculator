@@ -5,7 +5,7 @@ import middleware.ArithmeticOperationsFraction;
 import middleware.base.DataType;
 import middleware.base.Fraction;
 import middleware.base.ICalculation;
-import frontend.base.frame.MatrixAndNumberOperationGUI;
+import frontend.base.frame.MatrixNumberToMatrixOperationGUI;
 
 import java.math.BigDecimal;
 
@@ -16,7 +16,7 @@ import java.math.BigDecimal;
  */
 public class MatrixPotencyGUI implements ICalculation {
     public MatrixPotencyGUI() {
-        var gui = new MatrixAndNumberOperationGUI(this);
+        var gui = new MatrixNumberToMatrixOperationGUI(this);
         gui.setJFrameTitle("Matrix Potency");
         gui.setJButtonText("Potentiate Matrix");
     }

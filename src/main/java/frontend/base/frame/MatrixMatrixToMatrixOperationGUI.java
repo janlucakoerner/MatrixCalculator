@@ -20,10 +20,10 @@ import java.math.BigDecimal;
  * @version 1.0
  * @since 1.0 (2022/07/21)
  */
-public class TwoMatrixOperationGUI extends JFrame {
+public class MatrixMatrixToMatrixOperationGUI extends JFrame {
     private final JButton button = new JButton();
 
-    public TwoMatrixOperationGUI(ICalculation calculation) {
+    public MatrixMatrixToMatrixOperationGUI(ICalculation calculation) {
         var matrixPanel1 = new MatrixPanel(this);
         var matrixPanel2 = new MatrixPanel(this);
         var matrixPanelResult = new MatrixPanel(this);

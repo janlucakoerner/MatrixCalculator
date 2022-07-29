@@ -5,7 +5,7 @@ import middleware.ArithmeticOperationsFraction;
 import middleware.base.DataType;
 import middleware.base.Fraction;
 import middleware.base.ICalculation;
-import frontend.base.frame.OneMatrixOperationGUI;
+import frontend.base.frame.MatrixToMatrixOperationGUI;
 
 import java.math.BigDecimal;
 
@@ -16,7 +16,7 @@ import java.math.BigDecimal;
  */
 public class MatrixInversionGUI implements ICalculation {
     public MatrixInversionGUI() {
-        var gui = new OneMatrixOperationGUI(this);
+        var gui = new MatrixToMatrixOperationGUI(this);
         gui.setJFrameTitle("Matrix Inversion");
     }
     public Object[][] matrixCalculation(Object[][] matrix) {

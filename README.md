@@ -58,3 +58,7 @@ The `middleware` package provides all arithmetic operations on one side for `Big
 `Fraction` datatype and all interfaces which are necessary for the `Fraction` datatype. The last package is the `frontend`
 package. In this package there are several gui classes for every arithmetic operation. In the `frontend` package there is
 also a package named `base` located, which provides the different operation types and a number as well as a matrices panel.
+
+For more information about the source code structure of the project MatrixCalculator please check the javadoc which is also
+located within the project folder. Within the javadoc you will have the opportunity to read all information about any packages,
+classes, interfaces, methods and so on and so on.

@@ -226,4 +226,41 @@ public abstract class ArithmeticOperationsFraction {
         }
         return result;
     }
+    public static Fraction[] vectorAddition(Fraction[] vector1, Fraction[] vector2) {
+        if (vector1.length != vector2.length) {
+            JOptionPane.showMessageDialog(null, "Vector dimension is different!",
+                    "Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
+            return null;
+        }
+        var result = new Fraction[vector1.length];
+        for (int i = 0; i < vector1.length; i++) {
+            result[i] = vector1[i].add(vector2[i]);
+        }
+        return result;
+    }
+    public static Fraction[] vectorSubtraction(Fraction[] vector1, Fraction[] vector2) {
+        if (vector1.length != vector2.length) {
+            JOptionPane.showMessageDialog(null, "Vector dimension is different!",
+                    "Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
+            return null;
+        }
+        var result = new Fraction[vector1.length];
+        for (int i = 0; i < vector1.length; i++) {
+            result[i] = vector1[i].subtract(vector2[i]);
+        }
+        return result;
+    }
+    public static Fraction vectorScalarMultiplication(Fraction[] vector1, Fraction[] vector2) {
+        if (vector1.length != vector2.length) {
+            JOptionPane.showMessageDialog(null, "Vector dimension is different!",
+                    "Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
+            return null;
+        }
+        var result = Fraction.ZERO;
+        for (int i = 0; i < vector1.length; i++) {
+            var sum = vector1[i].multiply(vector2[i]);
+            result = result.add(sum);
+        }
+        return result;
+    }
 }

@@ -296,4 +296,44 @@ public abstract class ArithmeticOperationsBigDecimal {
 		}
 		return result;
 	}
+
+	public static BigDecimal[] vectorAddition(BigDecimal[] vector1, BigDecimal[] vector2) {
+		if (vector1.length != vector2.length) {
+			JOptionPane.showMessageDialog(null, "Vector dimension is different!",
+					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
+			return null;
+		}
+		var result = new BigDecimal[vector1.length];
+		for (int i = 0; i < vector1.length; i++) {
+			result[i] = vector1[i].add(vector2[i]);
+		}
+		return result;
+	}
+
+	public static BigDecimal[] vectorSubtraction(BigDecimal[] vector1, BigDecimal[] vector2) {
+		if (vector1.length != vector2.length) {
+			JOptionPane.showMessageDialog(null, "Vector dimension is different!",
+					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
+			return null;
+		}
+		var result = new BigDecimal[vector1.length];
+		for (int i = 0; i < vector1.length; i++) {
+			result[i] = vector1[i].subtract(vector2[i]);
+		}
+		return result;
+	}
+
+	public static BigDecimal vectorScalarMultiplication(BigDecimal[] vector1, BigDecimal[] vector2) {
+		if (vector1.length != vector2.length) {
+			JOptionPane.showMessageDialog(null, "Vector dimension is different!",
+					"Arithmetic Error", JOptionPane.ERROR_MESSAGE, null);
+			return null;
+		}
+		var result = BigDecimal.ZERO;
+		for (int i = 0; i < vector1.length; i++) {
+			var sum = vector1[i].multiply(vector2[i]);
+			result = result.add(sum);
+		}
+		return result;
+	}
 }

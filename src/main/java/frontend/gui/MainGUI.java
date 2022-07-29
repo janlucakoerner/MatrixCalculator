@@ -9,7 +9,7 @@ import java.awt.*;
 public class MainGUI extends JFrame {
     public static final MainGUI instance = new MainGUI();
     private MainGUI() {
-        setLayout(new GridLayout(6,2));
+        setLayout(new GridLayout(5,2));
         setTitle("Matrix / Vector Calculator");
         var menuBar = new JMenuBar();
         var menu = new JMenu("Datatype: BigDecimal");
@@ -77,27 +77,24 @@ public class MainGUI extends JFrame {
         });
         add(button_matrixInverseMultiplication);
 
-        var button_linearSystemOfEquation = new JButton("Linear System Of Equations");
-        button_linearSystemOfEquation.addActionListener(e -> {
-            // todo
-        });
-        add(button_linearSystemOfEquation);
-
         var button_vectorAddition = new JButton("Vector Addition");
         button_vectorAddition.addActionListener(e -> {
-            // todo
+            new VectorAdditionGUI();
+            setVisible(false);
         });
         add(button_vectorAddition);
 
         var button_vectorSubtraction = new JButton("Vector Subtraction");
         button_vectorSubtraction.addActionListener(e -> {
-            // todo
+            new VectorSubtractionGUI();
+            setVisible(false);
         });
         add(button_vectorSubtraction);
 
         var button_vectorScalarMultiplication = new JButton("Vector Scalar Multiplication");
         button_vectorScalarMultiplication.addActionListener(e -> {
-            // todo
+            new VectorScalarMultiplicationGUI();
+            setVisible(false);
         });
         add(button_vectorScalarMultiplication);
 

@@ -48,4 +48,10 @@ public class NumberPanel extends JPanel {
         else
             return null;
     }
+    public void setValue(BigDecimal value) {
+        textField.setText(value.toString());
+    }
+    public void setValue(Fraction value) {
+        textField.setText(value.toString());
+    }
 }

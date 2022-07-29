@@ -21,7 +21,13 @@ public interface ICalculation {
     default Object[] vectorCalculation(Object[] vector1, Object[] vector2) {
         return null;
     }
+    default Object[] vectorCalculation(Object[][] matrix, Object[] vector) {
+        return null;
+    }
     default Object numberCalculation(Object[][] matrix) { return null; }
+    default Object numberCalculation(Object[] vector1, Object[] vector2) {
+        return null;
+    }
     default Object[][] matrixCalculation(Object[][] matrix, Object number) {
         return null;
     }

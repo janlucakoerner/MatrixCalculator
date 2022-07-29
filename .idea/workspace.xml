@@ -5,11 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1939703e-de80-4a8b-b4eb-eb2894aaa097" name="Changes" comment="2022/07/29">
-      <change afterPath="$PROJECT_DIR$/src/main/java/frontend/base/frame/OpenVectorGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/frontend/base/panel/VectorPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/frontend/base/frame/MatrixVectorToVectorOperationGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/frontend/base/frame/VectorVectorToNumberOperationGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/frontend/base/frame/VectorVectorToVectorOperationGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/frontend/gui/LinearSystemOfEquationGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/frontend/gui/VectorAdditionGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/frontend/gui/VectorScalarMultiplicationGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/frontend/gui/VectorSubtractionGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/backend/ParserBigDecimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/ParserBigDecimal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/backend/ParserFraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/ParserFraction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/base/frame/MatrixVectorToVectorOperation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/base/panel/NumberPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/base/panel/NumberPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/gui/MainGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/gui/MainGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/middleware/ArithmeticOperationsBigDecimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/middleware/ArithmeticOperationsBigDecimal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/middleware/ArithmeticOperationsFraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/middleware/ArithmeticOperationsFraction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/middleware/base/ICalculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/middleware/base/ICalculation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +29,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -72,7 +81,7 @@
       <command value="mvn clean test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MainTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="MatrixCalculator" />
@@ -194,7 +203,21 @@
       <option name="project" value="LOCAL" />
       <updated>1659022828920</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="2022/07/29">
+      <created>1659110405043</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1659110405043</updated>
+    </task>
+    <task id="LOCAL-00014" summary="2022/07/29">
+      <created>1659110733309</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1659110733309</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -42,6 +42,7 @@ insert a custom matrix with the transferred row and column count. Therefor you o
 
 ### Used Technologies:
 
+* `maven` as build tool for the java program.
 * `java` as programming language for all arithmetic operations.
 * `java.swing` as graphical user interface extension for Java.
 * `java.math.BigDecimal` as datatype for each represented value.

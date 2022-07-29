@@ -10,16 +10,26 @@ import frontend.base.frame.MatrixNumberToMatrixOperationGUI;
 import java.math.BigDecimal;
 
 /**
+ * This class defines the JFrame and arithmetic operation for matrix potency.
  * @author janlucakoerner
  * @version 1.0
  * @since 1.0 (2022/07/27)
  */
 public class MatrixPotencyGUI implements ICalculation {
+    /**
+     * Constructor which provides some settings to the frame class.
+     */
     public MatrixPotencyGUI() {
         var gui = new MatrixNumberToMatrixOperationGUI(this);
         gui.setJFrameTitle("Matrix Potency");
         gui.setJButtonText("Potentiate Matrix");
     }
+    /**
+     * Inherited method from ICalculation which is used as arithmetic operation for matrix potency.
+     * @param matrix The matrix.
+     * @param number The exponent.
+     * @return The potency of both matrices.
+     */
     @Override
     public Object[][] matrixCalculation(Object[][] matrix, Object number) {
         if (matrix instanceof BigDecimal[][] && number instanceof BigDecimal &&

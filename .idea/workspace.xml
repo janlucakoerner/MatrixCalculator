@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1939703e-de80-4a8b-b4eb-eb2894aaa097" name="Changes" comment="2022/07/28">
-      <change afterPath="$PROJECT_DIR$/src/test/java/MainTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/backend/ParserBigDecimalTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/backend/ParserFractionTest.java" afterDir="false" />
+    <list default="true" id="1939703e-de80-4a8b-b4eb-eb2894aaa097" name="Changes" comment="2022/07/29">
+      <change afterPath="$PROJECT_DIR$/src/main/java/frontend/base/frame/OpenVectorGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/frontend/base/panel/VectorPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/base/panel/MatrixPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/base/panel/MatrixPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/ParserBigDecimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/ParserBigDecimal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/ParserFraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/ParserFraction.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +60,10 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="backend" />
       <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="frontend.base.frame" />
+      <recent name="frontend.base.panel" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -217,7 +218,8 @@
     <MESSAGE value="2022/07/22" />
     <MESSAGE value="2022/07/27" />
     <MESSAGE value="2022/07/28" />
-    <option name="LAST_COMMIT_MESSAGE" value="2022/07/28" />
+    <MESSAGE value="2022/07/29" />
+    <option name="LAST_COMMIT_MESSAGE" value="2022/07/29" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

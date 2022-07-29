@@ -95,4 +95,39 @@ public class ParserBigDecimal {
         }
         return null;
     }
+
+    /**
+     * This method parse a one dimensional array vector from the inline style.
+     * @param vector The inline style of a vector
+     * @return The multidimensional style of a vector
+     */
+    public static BigDecimal[] getVectorFromInline(String vector) {
+        if (!vector.equals("")) {
+            var lines = vector.split("\\\\n");
+            var rowCount = lines.length;
+            var bigDecimal_vector = new BigDecimal[rowCount];
+            for (int i = 0; i < rowCount; i++) {
+                bigDecimal_vector[i] = new BigDecimal(lines[i]);
+            }
+            return bigDecimal_vector;
+        }
+        return null;
+    }
+
+    /**
+     * This method parses a vector to string. It needs the method
+     * insertLinebreak(String[]) in order to do that.
+     * @param vector A vector.
+     * @return The given vector as String.
+     */
+    public static String vectorToString(BigDecimal[] vector) {
+        if (vector == null) {
+            return "";
+        }
+        var lines = new String[vector.length];
+        for (int i = 0; i < vector.length; i++) {
+            lines[i] = vector[i].toString();
+        }
+        return insertLinebreak(lines);
+    }
 }

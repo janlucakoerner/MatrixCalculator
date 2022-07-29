@@ -1,12 +1,12 @@
 # MatrixCalculator
 
-| Key           | Value                                         |
-|---------------|-----------------------------------------------|
-| Project Title | MatrixCalculator                              |
-| Author        | Jan-Luca Körner                               |
-| City          | Düsseldorf                                    |
-| Country       | Germany                                       |
-| Video         | [My Video Description](https://www.google.de) |
+| Key           | Value                                                 |
+|---------------|-------------------------------------------------------|
+| Project Title | MatrixCalculator                                      |
+| Author        | Jan-Luca Körner                                       |
+| City          | Düsseldorf                                            |
+| Country       | Germany                                               |
+| Video         | [My Video Description](https://youtu.be/yavtIhVu0do)  |
 
 ### Short introduction:
 

@@ -1,6 +1,7 @@
 package frontend.base.frame;
 
 import backend.ParserFraction;
+import frontend.gui.MainGUI;
 import middleware.base.DataType;
 import middleware.base.Fraction;
 import middleware.base.ICalculation;
@@ -9,6 +10,9 @@ import backend.ParserBigDecimal;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.math.BigDecimal;
 
 /**
@@ -47,9 +51,16 @@ public class TwoMatrixOperationGUI extends JFrame {
             }
         });
         add(button, BorderLayout.SOUTH);
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                MainGUI.instance.setVisible(true);
+                setVisible(false);
+            }
+        });
         pack();
         setMinimumSize(new Dimension(getWidth(), getHeight()));
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         setVisible(true);
     }
     public void setJFrameTitle(String jFrameTitle) {

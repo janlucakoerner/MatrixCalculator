@@ -20,7 +20,8 @@ public class Main {
 
          */
         DataType.current = DataType.FRACTION;
-        new MatrixAdditionGUI();
+        MainGUI.instance.setVisible(true);
+        //new MatrixAdditionGUI();
         //new MatrixSubtractionGUI();
         //new MatrixInversionGUI();
         //new MatrixMultiplicationGUI();

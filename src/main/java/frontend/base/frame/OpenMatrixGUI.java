@@ -1,10 +1,13 @@
 package frontend.base.frame;
 
+import frontend.gui.MainGUI;
 import middleware.base.DataType;
 import middleware.base.Fraction;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.math.BigDecimal;
 
 /**
